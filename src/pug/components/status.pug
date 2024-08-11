@@ -1,0 +1,26 @@
+include ../icons/icon-check.pug
+include ../icons/icon-warning.pug
+include ../icons/icon-error.pug
+
+mixin status-ok(text)
+    .status.status_ok
+        +icon-check('status__icon status__icon_ok')
+        .status__text.status__text_ok
+            = text
+
+mixin status-warning(text)
+    .status.status_warning
+        +icon-warning('status__icon status__icon_warning')
+        .status__text.status__text_warning
+            = text
+
+mixin status-error(text)
+    .status.status_error
+        +icon-error('status__icon status__icon_error')
+        .status__text.status__text_error
+            = text
+
+mixin status-text(text)
+    .status
+        .status__text.status__text
+            = text

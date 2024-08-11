@@ -1,0 +1,89 @@
+extends ../layout.pug
+
+block variables
+  - var page = 'settings'
+
+block content
+    include ../includes/header.pug
+    include ../components/alert.pug
+    include ../components/h2.pug
+    include ../components/h3.pug
+    include ../components/text-input.pug
+    include ../components/text-area.pug
+    include ../components/button.pug
+    include ../components/edit-button.pug
+    include ../icons/icon-print.pug
+    include ../icons/icon-download.pug
+
+    .main-content
+        .settings-wrapper
+            +h2('Настройки соглашения')
+            +alert(['Данный функционал предназначен только для электронного сбора согласий на обработку персональных данных клиентов и не несет никакую другую функцию.'], ['/', 'Подробнее...'])
+            +h3('Данные компании, для которой берется согласие')
+            .settings-company-fields.js-settings-content
+                .settings-field
+                    .settings-field__label Наименование юридического лица
+                    .settings-field__content.js-settings-content-text ООО Ромашка на лугу весенним майским утром
+                    +text-input('', 'Необходимо указать наименование юридического лица', '', 'ООО Ромашка на лугу весенним майским утром', 'hidden')
+                .settings-field-two
+                    .settings-field.settings-field-two__first
+                        .settings-field__label Населенный пункт
+                        .settings-field__content.js-settings-content-text г. Петропавловск-Камчатский
+                        +text-input('', 'Необходимо указать населенный пункт', '', 'г. Петропавловск-Камчатский', 'hidden')
+                    .settings-field.settings-field-two__second
+                        .settings-field__label Улица, дом, корпус, строение
+                        .settings-field__content.js-settings-content-text Проспект 60-ти летия Октября, д. 358, корп. 13
+                        +text-input('', 'Необходимо указать адрес', '', 'Проспект 60-ти летия Октября, д. 358, корп. 13', 'hidden')
+                .settings-controls.js-settings-controls
+                    +button('Отмена', 's', 'secondary', 'js-settings-edit-reset')
+                    +button('Сохранить', 's', 'primary', 'js-settings-edit-apply')
+                +edit-button('Редактировать', 'settings-field__edit js-settings-field-edit')
+            .settings-mail-address
+                +h3('Адреса электронной почты', 'settings-h3_thin')
+                .settings-text При окончании срока лицензии выгрузить согласия будет невозможно. Данные будут доступны только на той почте, которую вы указали для отправки согласий, поэтому внимательно следите за ее доступностью.
+            .settings-company-fields.js-settings-content
+                .settings-field-two
+                    .settings-field.settings-field-two__first
+                        .settings-field__label Адрес получения согласия
+                        .settings-field__content.js-settings-content-text rd@romashka.ru
+                        +text-input('', 'Необходимо указать адрес', '', 'rd@romashka.ru', 'hidden')
+                    .settings-field.settings-field-two__second
+                        .settings-field__label Адрес для запроса на отзыв согласия
+                        .settings-field__content.js-settings-content-text rd@romashka.ru
+                        +text-input('', 'Необходимо указать адрес', '', 'rd@romashka.ru', 'hidden')
+                .settings-controls.js-settings-controls
+                    +button('Отмена', 's', 'secondary', 'js-settings-edit-reset')
+                    +button('Сохранить', 's', 'primary', 'js-settings-edit-apply')
+                +edit-button('Редактировать', 'settings-field__edit js-settings-field-edit')
+            +h3('Согласие на обработку и хранение персональных данных')
+            .settings-consent
+                .settings-consent__text Абонент (номер телефона)
+                .settings-consent__text Даёт согласие на обработку персональных данных ООО «Ромашка на лугу весенним майским утром», находящегося по адресу: г. Усть-Каменогорск, Проспект 60-ти летия Октября, д. 358, корп. 13. А также ООО «Салон онлайн» (SONLINE), а также интеграторам и операторам связи, через которые ООО «Ромашка на лугу весенним майским утром» будет отправлять ему сообщения и письма.
+                .settings-consent__text Абонент даёт согласие операторам и интеграторам для обработки данных только в рамках деятельности ООО «Ромашка на лугу весенним майским утром», связанной с обслуживанием данного абонента.
+                .settings-company-fields.js-settings-content
+                    .settings-field.settings-field_thin
+                        .settings-field__label Уточняющие положения к соглашению на обработку и хранение персональных данных
+                        .settings-field__content.js-settings-content-text ООО Ромашка на лугу весенним майским утром также оставляет за собой право использовать персональные данные для следующих целей: улучшение качества обслуживания клиентов; предоставление персонализированных предложений и акций. ООО Ромашка на лугу весенним майским утром гарантирует, что все предоставленные персональные данные будут обработаны в соответствии с действующим законодательством о защите персональных данных и не будут переданы третьим лицам без предварительного согласия абонента, за исключением случаев, предусмотренных законом.
+                        +text-area('', '', 'ООО Ромашка на лугу весенним майским утром также оставляет за собой право использовать персональные данные для следующих целей: улучшение качества обслуживания клиентов; предоставление персонализированных предложений и акций. ООО Ромашка на лугу весенним майским утром гарантирует, что все предоставленные персональные данные будут обработаны в соответствии с действующим законодательством о защите персональных данных и не будут переданы третьим лицам без предварительного согласия абонента, за исключением случаев, предусмотренных законом.', 'hidden')
+                    .settings-controls.js-settings-controls
+                        +button('Отмена', 's', 'secondary', 'js-settings-edit-reset')
+                        +button('Сохранить', 's', 'primary', 'js-settings-edit-apply')
+                    +edit-button('Редактировать', 'settings-field__edit js-settings-field-edit')
+                    .settings-qr
+                        img.settings-qr__image(src='img/qr.jpg' alt='')
+                        .settings-qr__controls
+                            button.settings-qr__button(type="button")
+                                +icon-print('settings-qr__icon')
+                            button.settings-qr__button(type="button")
+                                +icon-download('settings-qr__icon')
+            +h3('Дополнительное соглашение')
+            .settings-company-fields.js-settings-content
+                .settings-field.settings-field_thin
+                    .settings-field__content.js-settings-content-text Даёт согласие на обработку персональных данных ООО Ромашка на лугу весенним майским утром, находящегося по адресу: г. Усть-Каменогорск, Проспект 60-ти летия Октября, д. 358, корп. 13. А также ООО «Салон онлайн» (SONLINE), а также интеграторам и операторам связи, через которые ООО Ромашка на лугу весенним майским утром будет отправлять ему сообщения и письма.
+                    +text-area('', '', 'Даёт согласие на обработку персональных данных ООО Ромашка на лугу весенним майским утром, находящегося по адресу: г. Усть-Каменогорск, Проспект 60-ти летия Октября, д. 358, корп. 13. А также ООО «Салон онлайн» (SONLINE), а также интеграторам и операторам связи, через которые ООО Ромашка на лугу весенним майским утром будет отправлять ему сообщения и письма.', 'hidden')
+                .settings-controls.js-settings-controls
+                    +button('Отмена', 's', 'secondary', 'js-settings-edit-reset')
+                    +button('Сохранить', 's', 'primary', 'js-settings-edit-apply')
+                +edit-button('Редактировать', 'settings-field__edit js-settings-field-edit')
+
+

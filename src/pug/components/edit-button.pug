@@ -1,0 +1,8 @@
+include ../icons/icon-edit.pug
+include ./tooltip.pug
+
+mixin edit-button(tooltipText='', className='')
+    .edit-button-wrapper.tooltip-trigger.js-tooltip-trigger(class=className)
+        button.edit-button.js-edit-button(type="button")
+            +icon-edit('edit-button__icon')
+        +tooltip(tooltipText)

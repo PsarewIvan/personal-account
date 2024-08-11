@@ -1,0 +1,49 @@
+@import 'reset';
+@import 'fonts';
+@import 'vars';
+
+@import './pages/index.scss';
+@import './pages/settings.scss';
+
+@import './includes/header.scss';
+
+@import './components/status.scss';
+@import './components/tooltip.scss';
+@import './components/h2.scss';
+@import './components/h3.scss';
+@import './components/alert.scss';
+@import './components/text-input.scss';
+@import './components/text-area.scss';
+@import './components/button.scss';
+@import './components/edit-button.scss';
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: $sfProDisplay;
+    line-height: 1.5;
+    color: #1f1f1f;
+    background-color: #fff;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-left: 272px;
+    padding: 32px;
+}
+
+.hidden {
+    display: none;
+}

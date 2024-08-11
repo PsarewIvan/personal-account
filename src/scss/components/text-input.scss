@@ -1,0 +1,89 @@
+.text-input {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    &__label {
+        margin-bottom: 4px;
+        color: #5c5c5c;
+        font-size: 12px;
+        line-height: 1.33;
+    }
+
+    &__input {
+        padding: 8px 34px 8px 8px;
+        border-radius: 8px;
+        border: 1px solid rgba(0, 0, 0, 0.16);
+        background: #fff;
+        color: #1f1f1f;
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        transition: all 0.2s;
+
+        &::placeholder {
+            color: #8f8f8f;
+        }
+
+        &:hover {
+            border-color: rgba(1, 144, 219, 0.48);
+        }
+
+        &:focus {
+            outline: none;
+            border-color: rgba(1, 144, 219, 0.48);
+        }
+
+        &:disabled {
+            border-color: rgba(0, 0, 0, 0.08);
+            background-color: rgba(0, 0, 0, 0.08);
+        }
+
+        &.error {
+            border-color: rgba(255, 59, 56, 0.48);
+        }
+    }
+
+    &__reset {
+        display: none;
+        position: absolute;
+        bottom: 6px;
+        right: 8px;
+        width: 24px;
+        height: 24px;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+
+        &:hover {
+            svg {
+                fill: #1f1f1f;
+            }
+        }
+
+        &.active {
+            display: flex;
+        }
+    }
+
+    &__icon {
+        fill: #8f8f8f;
+        transition: all 0.2s;
+    }
+
+    &__alert {
+        display: none;
+        margin-top: 4px;
+        color: #ff3b38;
+        font-size: 14px;
+        line-height: 20px;
+
+        &.active {
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,60 @@
+.status {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: nowrap;
+    width: fit-content;
+    height: 24px;
+    padding: 4px 8px;
+    border-radius: 360px;
+    background-color: rgba(1, 144, 219, 0.12);
+
+    &_ok {
+        background-color: rgba(43, 153, 39, 0.12);
+    }
+
+    &_warning {
+        background-color: rgba(245, 184, 0, 0.12);
+    }
+
+    &_error {
+        background-color: rgba(255, 59, 56, 0.12);
+    }
+
+    &__icon {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+
+        &_ok {
+            fill: #2b9927;
+        }
+
+        &_warning {
+            fill: #e0a800;
+        }
+
+        &_error {
+            fill: #ff3b38;
+        }
+    }
+
+    &__text {
+        flex-shrink: 0;
+        padding: 0 4px;
+        font-size: 12px;
+        line-height: 1.33;
+
+        // &_ok {
+        //     padding: 0;
+        // }
+
+        // &_warning {
+        //     padding: 0;
+        // }
+
+        // &_error {
+        //     padding: 0;
+        // }
+    }
+}

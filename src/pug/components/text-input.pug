@@ -1,0 +1,9 @@
+include ../icons/icon-cross.pug
+
+mixin text-input(label='', alert='', placeholder='', value='', className='')
+    .text-input.js-text-input-node(class=className)
+        .text-input__label= label
+        input.text-input__input.js-text-input(type="text" placeholder=placeholder value=value)
+        button.text-input__reset.js-text-input-reset(type="button")
+            +icon-cross('text-input__icon')
+        .text-input__alert.js-text-input-alert= alert

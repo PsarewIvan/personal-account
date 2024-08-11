@@ -1,0 +1,98 @@
+@import './includes/header';
+
+.settings-wrapper {
+    max-width: 720px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .settings-h3 {
+        &_thin {
+            padding-bottom: 0;
+        }
+    }
+}
+
+.settings-company-fields {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .settings-field__edit {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+
+.settings-field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    &_thin {
+        max-width: 648px;
+    }
+
+    &__label {
+        margin-bottom: 4px;
+        color: #5c5c5c;
+        font-size: 12px;
+        line-height: 1.33;
+    }
+
+    &__content {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+.settings-field-two {
+    position: relative;
+    display: flex;
+    gap: 32px;
+    justify-content: space-between;
+
+    &__first {
+        width: 33.33%;
+    }
+
+    &__second {
+        width: 62.22%;
+    }
+}
+
+.settings-mail-address {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+.settings-text {
+    margin: 0;
+    color: #1f1f1f;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.settings-consent {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.settings-generate {
+    padding-top: 16px;
+}
+
+.settings-controls {
+    display: none;
+    gap: 8px;
+    margin-top: 16px;
+
+    &.active {
+        display: flex;
+    }
+}

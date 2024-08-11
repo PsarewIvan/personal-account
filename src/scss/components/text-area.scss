@@ -1,0 +1,60 @@
+.text-area {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    &__label {
+        margin-bottom: 4px;
+        color: #5c5c5c;
+        font-size: 12px;
+        line-height: 1.33;
+    }
+
+    &__input {
+        resize: none;
+        height: 160px;
+        padding: 8px;
+        border-radius: 8px;
+        border: 1px solid rgba(0, 0, 0, 0.16);
+        background: #fff;
+        color: #1f1f1f;
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        transition: all 0.2s;
+
+        &::placeholder {
+            color: #8f8f8f;
+        }
+
+        &:hover {
+            border-color: rgba(1, 144, 219, 0.48);
+        }
+
+        &:focus {
+            outline: none;
+            border-color: rgba(1, 144, 219, 0.48);
+        }
+
+        &:disabled {
+            border-color: rgba(0, 0, 0, 0.08);
+            background-color: rgba(0, 0, 0, 0.08);
+        }
+    }
+
+    &__counter {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        gap: 2px;
+        color: #8f8f8f;
+        font-size: 12px;
+        line-height: 16px;
+
+        &_top {
+            transform: translateY(-100%);
+        }
+    }
+}

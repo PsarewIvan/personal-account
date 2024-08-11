@@ -1,0 +1,6 @@
+mixin alert(texts, link)
+    .alert
+        each text in texts
+            div.alert__text= text
+        if link
+            a.alert__link(href=link[0])= link[1]

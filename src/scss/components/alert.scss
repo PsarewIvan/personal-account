@@ -1,0 +1,21 @@
+.alert {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px;
+    border-radius: 8px;
+    background: rgba(255, 59, 56, 0.08);
+
+    &__text {
+        font-size: 16px;
+        line-height: 1.5;
+        color: #1f1f1f;
+    }
+
+    &__link {
+        text-decoration: none;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #006fbc;
+    }
+}
