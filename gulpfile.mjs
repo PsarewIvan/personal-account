@@ -21,27 +21,27 @@ const paths = {
     pug: {
         src: 'src/pug/pages/**/*.pug',
         watch: 'src/pug/**',
-        dest: 'dist/',
+        dest: 'docs/',
     },
     styles: {
         src: 'src/scss/index.scss',
         watch: 'src/scss/**',
-        dest: 'dist/css/',
+        dest: 'docs/css/',
     },
     scripts: {
         src: 'src/js/**',
         watch: 'src/js/**',
-        dest: 'dist/js/',
+        dest: 'docs/js/',
     },
     images: {
         src: 'src/assets/images/**',
         watch: 'src/assets/images/**',
-        dest: 'dist/img/',
+        dest: 'docs/img/',
     },
     fonts: {
         src: 'src/assets/fonts/**/*',
         watch: 'src/assets/fonts/**',
-        dest: 'dist/fonts/',
+        dest: 'docs/fonts/',
     },
 };
 
@@ -117,7 +117,7 @@ function images() {
 function watch() {
     server.init({
         server: {
-            baseDir: './dist',
+            baseDir: './docs',
             index: 'index.html',
         },
         open: false,
