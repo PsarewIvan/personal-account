@@ -3,7 +3,7 @@ name: Build and Deploy
 on:
     push:
         branches:
-            - main # Запуск при пуше в ветку main
+            - master
 
 jobs:
     build:
