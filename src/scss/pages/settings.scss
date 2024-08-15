@@ -96,3 +96,42 @@
         display: flex;
     }
 }
+
+.settings-qr {
+    position: absolute;
+    top: 0;
+    right: -32px;
+    transform: translateX(100%);
+
+    &__img {
+        width: 240px;
+        height: 240px;
+        object-fit: contain;
+    }
+
+    &__controls {
+        display: flex;
+        justify-content: center;
+        margin-top: 8px;
+    }
+
+    &__button {
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+
+        &:hover {
+            .settings-qr__icon {
+                fill: #1f1f1f;
+            }
+        }
+    }
+
+    &__icon {
+        fill: #5c5c5c;
+        transition: all 0.2s;
+    }
+}

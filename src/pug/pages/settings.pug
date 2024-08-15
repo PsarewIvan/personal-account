@@ -11,6 +11,7 @@ block content
     include ../components/text-input.pug
     include ../components/text-area.pug
     include ../components/button.pug
+    include ../components/popup-qr.pug
 
     .main-content
         .settings-wrapper
@@ -42,6 +43,7 @@ block content
             +h3('Дополнительное соглашение')
             +text-area('Текст дополнительного соглашения', 'Текст дополнительного соглашения. Текст до 1500 символов.')
             .settings-generate
-                +button('Сгенерировать QR-код', 'l')
+                +button('Сгенерировать QR-код', 'l', 'primary', 'js-qr-button')
+    +popup-qr()
 
 

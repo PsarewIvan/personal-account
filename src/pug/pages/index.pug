@@ -6,6 +6,139 @@ block variables
 block content
     include ../includes/header.pug
     include ../components/h2.pug
+    include ../components/datepicker.pug
+    include ../components/button.pug
+    include ../components/search-input.pug
+    include ../components/tooltip.pug
+    include ../icons/icon-cancel.pug
+    include ../icons/icon-print.pug
+    include ../icons/icon-chevron-left.pug
 
     .main-content
         +h2('Лента событий')
+        form.index-form
+            .index-dates
+                +datepicker("index-sort-from", 'с', 'index-datepicker')
+                +datepicker("index-sort-to", 'по', 'index-datepicker')
+            .index-phone
+                +search-input('Телефон клиента', '', 'index-search-input')
+            .index-params
+                .index-params-select.select-component-wrapper
+                  select.select-component.js-select-component(data-placeholder='Согласие')
+                    option.select-component__option(value='main') Основное согласие
+                    option.select-component__option(value='dop') Дополнительное согласие
+                .index-params-select.select-component-wrapper
+                  select.select-component.js-select-component(data-placeholder='Статус')
+                    option.select-component__option(value='main') Получение согласия
+                    option.select-component__option(value='dop') Отзыв согласия
+            .index-submit
+                +button('Показать', size='s', theme='primary')
+        .index-table
+            .index-table__head
+                .index-table__cell-h Дата
+                .index-table__cell-h Телефон
+                .index-table__cell-h Имя клиента
+                .index-table__cell-h Согласие
+                .index-table__cell-h
+                .index-table__cell-h Статус
+                .index-table__cell-h
+            .index-table__row
+                .index-table__cell 00.00.0000 00:00
+                .index-table__cell +7 (000) 000-00-00
+                .index-table__cell Константинопольский Константин Константинович
+                .index-table__cell Основное
+                .index-table__cell
+                    button.index-table__button.tooltip-trigger.js-tooltip-trigger(type='button')
+                        +icon-cancel('index-table__icon')
+                        +tooltip('Отозвать  согласие')
+                .index-table__cell
+                    .badge.badge_green Согласие
+                .index-table__cell
+                    button.index-table__button.tooltip-trigger.js-tooltip-trigger(type='button')
+                        +icon-print('index-table__icon')
+                        +tooltip('Напечатать согласие')
+            .index-table__row
+                .index-table__cell 00.00.0000 00:00
+                .index-table__cell +7 (000) 000-00-00
+                .index-table__cell Константинопольский Константин Константинович
+                .index-table__cell Дополнительное
+                .index-table__cell
+                    button.index-table__button.tooltip-trigger.js-tooltip-trigger(type='button')
+                        +icon-cancel('index-table__icon')
+                        +tooltip('Отозвать  согласие')
+                .index-table__cell
+                    .badge.badge_green Согласие
+                .index-table__cell
+                    button.index-table__button.tooltip-trigger.js-tooltip-trigger(type='button')
+                        +icon-print('index-table__icon')
+                        +tooltip('Напечатать согласие')
+            .index-table__row
+                .index-table__cell 00.00.0000 00:00
+                .index-table__cell +7 (000) 000-00-00
+                .index-table__cell Константинопольский Константин Константинович
+                .index-table__cell Основное
+                .index-table__cell
+                    button.index-table__button.tooltip-trigger.js-tooltip-trigger(type='button')
+                        +icon-cancel('index-table__icon')
+                        +tooltip('Отозвать  согласие')
+                .index-table__cell
+                    .badge.badge_green Согласие
+                .index-table__cell
+                    button.index-table__button.tooltip-trigger.js-tooltip-trigger(type='button')
+                        +icon-print('index-table__icon')
+                        +tooltip('Напечатать согласие')
+            .index-table__row
+                .index-table__cell 00.00.0000 00:00
+                .index-table__cell +7 (000) 000-00-00
+                .index-table__cell Константинопольский Константин Константинович
+                .index-table__cell Основное
+                .index-table__cell
+                .index-table__cell
+                    .badge.badge_red Отзыв
+                .index-table__cell
+                    button.index-table__button.tooltip-trigger.js-tooltip-trigger(type='button')
+                        +icon-print('index-table__icon')
+                        +tooltip('Напечатать согласие')
+            .index-table__row
+                .index-table__cell 00.00.0000 00:00
+                .index-table__cell +7 (000) 000-00-00
+                .index-table__cell Константинопольский Константин Константинович
+                .index-table__cell Дополнительное
+                .index-table__cell
+                    button.index-table__button.tooltip-trigger.js-tooltip-trigger(type='button')
+                        +icon-cancel('index-table__icon')
+                        +tooltip('Отозвать  согласие')
+                .index-table__cell
+                    .badge.badge_green Согласие
+                .index-table__cell
+                    button.index-table__button.tooltip-trigger.js-tooltip-trigger(type='button')
+                        +icon-print('index-table__icon')
+                        +tooltip('Напечатать согласие')
+            .index-table__row
+                .index-table__cell 00.00.0000 00:00
+                .index-table__cell +7 (000) 000-00-00
+                .index-table__cell Константинопольский Константин Константинович
+                .index-table__cell Основное
+                .index-table__cell
+                    button.index-table__button.tooltip-trigger.js-tooltip-trigger(type='button')
+                        +icon-cancel('index-table__icon')
+                        +tooltip('Отозвать  согласие')
+                .index-table__cell
+                    .badge.badge_green Согласие
+                .index-table__cell
+                    button.index-table__button.tooltip-trigger.js-tooltip-trigger(type='button')
+                        +icon-print('index-table__icon')
+                        +tooltip('Напечатать согласие')
+        .index-pagination
+            button.index-pagination__button.index-pagination__button_left(type='button')
+                +icon-chevron-left('index-pagination__icon')
+            button.index-pagination__button(type='button') 1
+            button.index-pagination__button.index-pagination__button_active(type='button') 2
+            button.index-pagination__button(type='button') 3
+            button.index-pagination__button(type='button') 4
+            button.index-pagination__button(type='button') 5
+            button.index-pagination__button.index-pagination__button_disabled(type='button') ...
+            button.index-pagination__button(type='button') 76
+            button.index-pagination__button.index-pagination__button_right(type='button')
+                +icon-chevron-left('index-pagination__icon index-pagination__icon_right')
+

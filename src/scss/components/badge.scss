@@ -1,0 +1,17 @@
+.badge {
+    display: flex;
+    align-items: center;
+    padding: 2px 8px;
+    border-radius: 36px;
+    color: #fff;
+    font-size: 12px;
+    line-height: 16px;
+
+    &_green {
+        background-color: #75b872;
+    }
+
+    &_red {
+        background-color: #f57f7d;
+    }
+}

@@ -1,0 +1,10 @@
+include ../icons/icon-cross.pug
+
+mixin popup-qr(className)
+    .popup-qr.hidden.js-qr-popup
+        .popup-qr__header
+            button.popup-qr__button.js-close-qr-popup(type="button")
+                +icon-cross('popup-qr__icon')
+        .popup-qr__content
+            .popup-qr__text Для подтверждения согласия на обработку и хранение персональных данных просканируйте QR-код и перейдите по ссылке
+            img.popup-qr__img(src="img/qr.jpg")

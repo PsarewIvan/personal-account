@@ -1,0 +1,8 @@
+include ../icons/icon-calendar.pug
+
+mixin datepicker(name, before, className='')
+    .datepicker-component(class=className)
+        if before
+            .datepicker-component__before= before
+        input.datepicker-component__input.js-datepicker(type="text" name=name)
+        +icon-calendar('datepicker-component__icon')

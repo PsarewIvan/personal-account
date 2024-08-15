@@ -1,0 +1,9 @@
+include ../icons/icon-cross.pug
+include ../icons/icon-search.pug
+
+mixin search-input(placeholder='', value='', className='')
+    .search-input.js-search-input-node(class=className)
+        +icon-search('search-input__icon-search')
+        input.search-input__input.js-search-input(type="text" placeholder=placeholder value=value)
+        button.search-input__reset.js-search-input-reset(type="button")
+            +icon-cross('search-input__icon')

@@ -12,6 +12,7 @@ block content
     include ../components/text-area.pug
     include ../components/button.pug
     include ../components/edit-button.pug
+    include ../components/tooltip.pug
     include ../icons/icon-print.pug
     include ../icons/icon-download.pug
 
@@ -70,12 +71,13 @@ block content
                         +button('Сохранить', 's', 'primary', 'js-settings-edit-apply')
                     +edit-button('Редактировать', 'settings-field__edit js-settings-field-edit')
                     .settings-qr
-                        img.settings-qr__image(src='img/qr.jpg' alt='')
+                        img.settings-qr__img(src='img/qr.jpg' alt='')
                         .settings-qr__controls
                             button.settings-qr__button(type="button")
                                 +icon-print('settings-qr__icon')
-                            button.settings-qr__button(type="button")
+                            button.settings-qr__button.tooltip-trigger.js-tooltip-trigger(type="button")
                                 +icon-download('settings-qr__icon')
+                                +tooltip('Скачать QR-код')
             +h3('Дополнительное соглашение')
             .settings-company-fields.js-settings-content
                 .settings-field.settings-field_thin
@@ -85,5 +87,3 @@ block content
                     +button('Отмена', 's', 'secondary', 'js-settings-edit-reset')
                     +button('Сохранить', 's', 'primary', 'js-settings-edit-apply')
                 +edit-button('Редактировать', 'settings-field__edit js-settings-field-edit')
-
-

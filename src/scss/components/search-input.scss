@@ -1,17 +1,18 @@
-.text-input {
+.search-input {
     position: relative;
     display: flex;
     flex-direction: column;
 
-    &__label {
-        margin-bottom: 4px;
-        color: #5c5c5c;
-        font-size: 12px;
-        line-height: 1.33;
+    &__icon-search {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 8px;
+        fill: #5c5c5c;
     }
 
     &__input {
-        padding: 7px 34px 7px 8px;
+        padding: 7px 7px 7px 35px;
         border-radius: 8px;
         border: 1px solid rgba(0, 0, 0, 0.16);
         background: #fff;
@@ -40,8 +41,8 @@
             background-color: rgba(0, 0, 0, 0.08);
         }
 
-        &.error {
-            border-color: rgba(255, 59, 56, 0.48);
+        &.active {
+            padding-right: 34px;
         }
     }
 
@@ -73,17 +74,5 @@
     &__icon {
         fill: #8f8f8f;
         transition: all 0.2s;
-    }
-
-    &__alert {
-        display: none;
-        margin-top: 4px;
-        color: #ff3b38;
-        font-size: 14px;
-        line-height: 20px;
-
-        &.active {
-            display: block;
-        }
     }
 }
