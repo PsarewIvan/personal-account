@@ -1,0 +1,42 @@
+.notification-wrapper {
+    max-width: 720px;
+}
+
+.notification-text {
+    color: #1f1f1f;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.notification {
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &__radio {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__inputs {
+        display: flex;
+        gap: 32px;
+    }
+
+    &__select {
+        min-width: 220px;
+    }
+
+    &__toggles {
+        display: flex;
+        flex-direction: column;
+        padding-top: 24px;
+    }
+
+    &__buttons {
+        display: flex;
+        padding-top: 16px;
+    }
+}

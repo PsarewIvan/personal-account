@@ -1,0 +1,7 @@
+mixin select(elements, placeholder, label, className)
+    .select-component-wrapper
+        if label || label !== ''
+            .select-component__label= label
+        select.select-component(class=className data-placeholder=placeholder).js-select-component
+            each element in elements
+                option.select-component__option(value=element.value)= element.text

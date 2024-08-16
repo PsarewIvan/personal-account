@@ -1,0 +1,51 @@
+extends ../layout.pug
+
+block variables
+  - var page = 'index-not-auth'
+
+block content
+    include ../includes/header.pug
+    include ../components/alert-button.pug
+    include ../components/search-input.pug
+    include ../components/popup-qr.pug
+    include ../icons/icon-qr.pug
+
+    .main-content
+        +alert-button('Телефон не авторизован', ['Внимание, сообщения не отправляются. Необходимо привязать рабочий телефон.'], 'Авторизовать')
+        form.index-form
+            .index-phone
+                +search-input('Телефон клиента', '', 'index-search-input_not-auth')
+            .index-qr_content
+                button.index-qr_content__link.js-qr-button(type='button')
+                    +icon-qr('index-qr_content__icon')
+                    span.index-qr_content__text QR-код для клиентов
+        .table.index-table-not-auth
+            .table-head
+                .table-cell-h Дата
+                .table-cell-h Телефон
+                .table-cell-h Имя клиента
+                .table-cell-h Согласие
+                .table-cell-h Статус
+            .table-row
+                .table-cell 00.00.0000 00:00
+                .table-cell +7 (000) 000-00-00
+                .table-cell Константинопольский Константин Константинович
+                .table-cell Основное
+                .table-cell
+                    .badge.badge_green Согласие
+            .table-row
+                .table-cell 00.00.0000 00:00
+                .table-cell +7 (000) 000-00-00
+                .table-cell Константинопольский Константин Константинович
+                .table-cell Дополнительное
+                .table-cell
+                    .badge.badge_green Согласие
+            .table-row
+                .table-cell 00.00.0000 00:00
+                .table-cell +7 (000) 000-00-00
+                .table-cell Константинопольский Константин Константинович
+                .table-cell Основное
+                .table-cell
+                    .badge.badge_red Отзыв
+    +popup-qr()
+

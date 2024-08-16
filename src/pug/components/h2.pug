@@ -1,3 +1,5 @@
-mixin h2(text)
+mixin h2(text, className, label)
     .title-h2
-        h2.title-h2__text= text
+        h2.title-h2__text(class=className)= text
+        if label !== ''
+            .title-h2__label= label

@@ -4,6 +4,12 @@
 
 @import './pages/index.scss';
 @import './pages/settings.scss';
+@import './pages/access.scss';
+@import './pages/notifications.scss';
+@import './pages/history.scss';
+@import './pages/howitwork.scss';
+@import './pages/license.scss';
+@import './pages/referral.scss';
 
 @import './includes/header.scss';
 
@@ -21,6 +27,11 @@
 @import './components/select.scss';
 @import './components/badge.scss';
 @import './components/search-input.scss';
+@import './components/alert-button.scss';
+@import './components/radio.scss';
+@import './components/toggle.scss';
+@import './components/pass-input.scss';
+@import './components/table.scss';
 
 * {
     box-sizing: border-box;

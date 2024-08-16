@@ -9,3 +9,50 @@ block content
 
     .main-content
         +h2('История изменений')
+        .table.history-table
+            .table-head
+                .table-cell-h Дата
+                .table-cell-h Тип
+                .table-cell-h Событие
+            .table-row
+                .table-cell.align-start 00.00.0000 00:00
+                .table-cell.align-start
+                    .badge.badge_blue Создание
+                .table-cell.align-start
+                  .history__events
+                    .history__event
+                      .history__event-title Наименование юридического лица
+                      .history__event-text ООО Ромашка на лугу весенним майским утром
+                    .history__event
+                      .history__event-title Населенный пункт
+                      .history__event-text г. Петропавловск-Камчатский
+                    .history__event
+                      .history__event-title Улица, дом, корпус, строение
+                      .history__event-text Проспект 60-ти летия Октября, д. 358, корп. 13
+                    .history__event
+                      .history__event-title Адрес получения согласия
+                      .history__event-text rd@romashka.ru
+                    .history__event
+                      .history__event-title Адрес для запроса на отзыв согласия
+                      .history__event-text rd@romashka.ru
+                    .history__event
+                      .history__event-title Дополнительный текст
+                      .history__event-text ООО Ромашка на лугу весенним майским утром также оставляет за собой право использовать персональные данные для следующих целей: улучшение качества обслуживания клиентов; предоставление персонализированных предложений и акций.
+            .table-row
+                .table-cell.align-start 00.00.0000 00:00
+                .table-cell.align-start
+                    .badge.badge_yellow Изменение
+                .table-cell.align-start
+                  .history__events
+                    .history__event
+                      .history__event-title Адрес для запроса на отзыв согласия
+                      .history__event-text cancel_rd@romashka.ru
+            .table-row
+                .table-cell.align-start 00.00.0000 00:00
+                .table-cell.align-start
+                    .badge.badge_red Удаление
+                .table-cell.align-start
+                  .history__events
+                    .history__event
+                      .history__event-title Дополнительный текст
+                      .history__event-text.through ООО Ромашка на лугу весенним майским утром также оставляет за собой право использовать персональные данные для следующих целей: улучшение качества обслуживания клиентов; предоставление персонализированных предложений и акций.

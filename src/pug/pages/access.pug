@@ -6,6 +6,87 @@ block variables
 block content
     include ../includes/header.pug
     include ../components/h2.pug
+    include ../components/h3.pug
+    include ../components/search-input.pug
+    include ../components/button.pug
+    include ../components/tooltip.pug
+    include ../components/select.pug
+    include ../icons/icon-edit.pug
 
     .main-content
         +h2('Доступы')
+        form.access-form
+            .access-phone
+                +search-input('Имя или email', '', 'access-search-input')
+            .access-params
+                +select([{value: 'search', text: 'Поиск согласия'},{value: 'companyData', text: 'Данные компании'},{value: 'mail', text: 'Адреса эл. почты'},{value: 'mainOferta', text: 'Текст основного соглашения'},{value: 'additionalOferta', text: 'Текст доп. соглашения'},{value: 'notifications', text: 'Уведомления'},{value: 'license', text: 'Лицензии'},{value: 'access', text: 'Доступы'},{value: 'referral', text: 'Реферальная программа'},{value: 'history', text: 'История'},{value: 'reels', text: 'Лента событий'}], 'Доступ', '', 'access-params-select')
+            .access-submit
+                +button('Показать', size='s', theme='primary')
+        +h3('Список пользователей')
+        .table.access-table
+            .table-head
+                .table-cell-h Имя
+                .table-cell-h Статус
+                .table-cell-h Email
+                .table-cell-h Доступы
+                .table-cell-h
+            .table-row.full-width
+                .table-cell
+                    button.access-table__button-link Добавить нового пользователя
+            .table-row
+                .table-cell.align-start Константин
+                .table-cell.align-start
+                    .badge.badge_green Активен
+                .table-cell.align-start.ellipsis konstantinopolsky_konstantin@email.ru
+                .table-cell.align-start
+                    .access-tags
+                        .access-tag Поиск согласия
+                        .access-tag Данные компании
+                        .access-tag Адреса эл. почты
+                        .access-tag Текст основного соглашения
+                        .access-tag Текст доп. соглашения
+                        .access-tag Уведомления
+                        .access-tag Лицензии
+                        .access-tag Доступы
+                        .access-tag Реферальная программа
+                        .access-tag История
+                        .access-tag Лента событий
+                .table-cell.align-start
+                    button.table-button.tooltip-trigger.js-tooltip-trigger(type='button')
+                        +icon-edit('table-icon')
+                        +tooltip('Редактировать')
+            .table-row
+                .table-cell.align-start Константин
+                .table-cell.align-start
+                    .badge.badge_green Активен
+                .table-cell.align-start.ellipsis konstantinopolsky_konstantin@email.ru
+                .table-cell.align-start
+                    .access-tags
+                        .access-tag Поиск согласия
+                        .access-tag Данные компании
+                        .access-tag Адреса эл. почты
+                        .access-tag Текст основного соглашения
+                        .access-tag Текст доп. соглашения
+                        .access-tag Уведомления
+                        .access-tag Лицензии
+                        .access-tag Доступы
+                        .access-tag Реферальная программа
+                        .access-tag История
+                        .access-tag Лента событий
+                .table-cell.align-start
+                    button.table-button.tooltip-trigger.js-tooltip-trigger(type='button')
+                        +icon-edit('table-icon')
+                        +tooltip('Редактировать')
+            .table-row
+                .table-cell.align-start Константин
+                .table-cell.align-start
+                    .badge.badge_gray Активен
+                .table-cell.align-start.ellipsis konstantinopolsky_konstantin@email.ru
+                .table-cell.align-start
+                    .access-tags
+                        .access-tag Поиск согласия
+                .table-cell.align-start
+                    button.table-button.tooltip-trigger.js-tooltip-trigger(type='button')
+                        +icon-edit('table-icon')
+                        +tooltip('Редактировать')
+

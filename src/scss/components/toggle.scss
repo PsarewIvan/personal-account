@@ -1,0 +1,92 @@
+.toggle-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.toggle {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+
+    input[type='checkbox'] {
+        display: none;
+
+        &:checked + label {
+            color: #1f1f1f;
+
+            &::before {
+                border-color: rgba(1, 144, 219, 1);
+                background-color: rgba(1, 144, 219, 1);
+            }
+
+            &::after {
+                transform: translateX(20px);
+                background-color: #fff;
+            }
+        }
+
+        &.error + label {
+            &::before {
+                border-color: rgba(255, 59, 56, 1);
+            }
+
+            .radio__description {
+                color: rgba(255, 59, 56, 1);
+            }
+        }
+    }
+
+    &__label {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        padding-left: 52px;
+        color: #5c5c5c;
+        font-size: 14px;
+        line-height: 20px;
+        cursor: pointer;
+        user-select: none;
+        transition: color 0.2s;
+
+        &:hover {
+            color: #1f1f1f;
+
+            &::before {
+                border-color: rgba(1, 144, 219, 1);
+            }
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 44px;
+            height: 24px;
+            border-radius: 99px;
+            border: 2px solid rgba(0, 0, 0, 0.16);
+            background-color: white;
+            box-sizing: border-box;
+            transition: all 0.2s;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 4px;
+            top: 4px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #8f8f8f;
+            transition: all 0.2s ease;
+        }
+    }
+
+    &__description {
+        color: #5c5c5c;
+        font-size: 12px;
+        line-height: 16px;
+    }
+}

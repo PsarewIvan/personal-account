@@ -6,6 +6,132 @@ block variables
 block content
     include ../includes/header.pug
     include ../components/h2.pug
+    include ../components/h3.pug
+    include ../components/button.pug
+    include ../icons/icon-gift.pug
+    include ../icons/icon-tooltip-arrow.pug
 
     .main-content
-        +h2('Реферальная программа. Получите «Картотеку» со скидкой до 90% на 3 года!')
+      .referral-wrapper
+        +h2('Реферальная программа. Получите «Картотеку» со скидкой до 90% на 3 года!', 'referral__title', 'Приглашайте друзей и коллег и экономьте на модуле «Картотека»')
+        +h3('Как получить скидку?')
+        ol.referral__list
+          li.referral__li Скопируйте свою уникальную ссылку.
+          li.referral__li Поделитесь ей с другими компаниями.
+          li.referral__li За каждого привлеченного клиента вы получите скидку!
+        +h3('Ваши бонусы по реферальной программе')
+      .referral__graph
+        .graph(style="--percent-value: 90%")
+          .graph__head
+            .graph__head-text Цена на певый год
+            .graph__head-text 2 080 ₽
+          .graph__progress
+            .graph__bar
+            .graph__fill-bar-wrapper
+              .graph__fill-bar
+            .graph__marks
+              .graph__mark
+              .graph__mark
+              .graph__mark
+              .graph__mark
+              .graph__mark
+              .graph__mark
+              .graph__mark
+              .graph__mark
+              .graph__mark
+              .graph__mark
+              .graph__mark
+            .graph__percent.start 0%
+            .graph__percent.end 100%
+            .graph__tooltip-wrapper
+              .graph__tooltip.align-left
+                +icon-gift('graph__tooltip-icon')
+                span 90%
+                +icon-tooltip-arrow('graph__tooltip-arrow')
+        .graph(style="--percent-value: 15%")
+          .graph__head
+            .graph__head-text Цена на второй год
+            .graph__head-text 17 680 ₽
+          .graph__progress
+            .graph__bar
+            .graph__fill-bar-wrapper
+              .graph__fill-bar
+            .graph__marks
+              .graph__mark
+              .graph__mark
+              .graph__mark
+              .graph__mark
+              .graph__mark
+              .graph__mark
+              .graph__mark
+              .graph__mark
+              .graph__mark
+              .graph__mark
+              .graph__mark
+            .graph__percent.start 0%
+            .graph__percent.end 100%
+            .graph__tooltip-wrapper
+              .graph__tooltip.align-center
+                +icon-gift('graph__tooltip-icon')
+                span 15%
+                +icon-tooltip-arrow('graph__tooltip-arrow')
+        .graph(style="--percent-value: 0%")
+          .graph__head
+            .graph__head-text Цена на третий год
+            .graph__head-text 20 800 ₽
+          .graph__progress
+            .graph__bar
+            .graph__fill-bar-wrapper
+              .graph__fill-bar
+            .graph__marks
+              .graph__mark
+              .graph__mark
+              .graph__mark
+              .graph__mark
+              .graph__mark
+              .graph__mark
+              .graph__mark
+              .graph__mark
+              .graph__mark
+              .graph__mark
+              .graph__mark
+            .graph__percent.start 0%
+            .graph__percent.end 100%
+            .graph__tooltip-wrapper
+              .graph__tooltip.align-right
+                +icon-gift('graph__tooltip-icon')
+                span 0%
+                +icon-tooltip-arrow('graph__tooltip-arrow')
+        .graph(style="--percent-value: 0%")
+          .graph__head
+            .graph__head-text Цена на четвертый год
+            .graph__head-text 20 800 ₽
+          .graph__progress
+            .graph__bar
+            .graph__fill-bar-wrapper
+              .graph__fill-bar
+            .graph__marks
+              .graph__mark
+              .graph__mark
+              .graph__mark
+              .graph__mark
+              .graph__mark
+              .graph__mark
+              .graph__mark
+              .graph__mark
+              .graph__mark
+              .graph__mark
+              .graph__mark
+            .graph__percent.start 0%
+            .graph__percent.end 100%
+            .graph__tooltip-wrapper
+              .graph__tooltip.align-right
+                +icon-gift('graph__tooltip-icon')
+                span 0%
+                +icon-tooltip-arrow('graph__tooltip-arrow')
+      .referral-wrapper
+        +h3('Чем больше друзей, тем выгоднее')
+        .referral__text 1 друг = 15% скидка, 6 друзей = 90% скидка на 1 год. Привлекайте клиентов и получайте скидку 90% на «Картотеку» до 3 лет!
+        .referral__buttons
+          +button('Копировать ссылку на «Картотеку»','s', 'primary', 'referral__button')
+          button.referral__link-button(type='button') Условия участия в реферальной программе

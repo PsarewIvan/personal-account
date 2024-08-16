@@ -1,0 +1,7 @@
+mixin radio(elements, name)
+    .radio-wrapper
+        each element in elements
+            .radio
+                input(type="radio" id=element.id name=name checked=element.checked)
+                label.radio__label(for=element.id)= element.text
+                    span.radio__description= element.description

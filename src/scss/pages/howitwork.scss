@@ -1,0 +1,19 @@
+.howitwork-wrapper {
+    max-width: 720px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.howitwork {
+    &__list {
+        padding: 0 0 0 20px;
+        margin: 0;
+    }
+
+    &__li {
+        color: #1f1f1f;
+        font-size: 16px;
+        line-height: 24px;
+    }
+}

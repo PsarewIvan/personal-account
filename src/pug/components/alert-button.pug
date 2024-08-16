@@ -1,0 +1,11 @@
+include ./button.pug
+
+mixin alert-button(title='', texts, button)
+    .alert-button
+        .alert-button__content
+            if title !== ''
+                .alert-button__title= title
+            each text in texts
+                div.alert__text= text
+        if button
+            +button(button, 's', 'primary', 'alert-button__button')

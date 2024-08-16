@@ -6,6 +6,89 @@ block variables
 block content
     include ../includes/header.pug
     include ../components/h2.pug
+    include ../components/status.pug
+    include ../components/button.pug
+    include ../icons/icon-ok.pug
 
     .main-content
         +h2('Лицензии')
+        .license-wrapper
+          .license
+            .license-card.trial
+              .license-card__block
+                .license-card__title Ознакомительная
+                .license-card__badge
+                  +status-warning('Действует до 19.08.2024 (осталось 7 дней)')
+              .license-card__block
+                .license-card__main-li
+                  +icon-ok('license-card__main-li-icon')
+                  .license-card__main-li-text Соглашение о персональных данных
+                .license-card__main-li
+                  +icon-ok('license-card__main-li-icon')
+                  .license-card__main-li-text Дополнительное соглашение
+              .license-card__block.price
+                .license-card__price-block
+                  .license-card__price Бесплатно
+                  .license-card__price-text на 7 дней
+          .license
+            .license-card.accept
+              .license-card__block
+                .license-card__title Основная
+              .license-card__block
+                .license-card__main-li
+                  +icon-ok('license-card__main-li-icon')
+                  .license-card__main-li-text Соглашение о персональных данных
+              .license-card__block.bottom
+                .license-card__price-block
+                  .license-card__price 12 000 ₽
+                  .license-card__price-text за 12 месяцев
+                +button('Продлить', 's', 'primary', 'license-card__button')
+            .license-card.accept
+              .license-card__block
+                .license-card__title Расширенная
+              .license-card__block
+                .license-card__main-li
+                  +icon-ok('license-card__main-li-icon')
+                  .license-card__main-li-text Соглашение о персональных данных
+                .license-card__main-li
+                  +icon-ok('license-card__main-li-icon')
+                  .license-card__main-li-text Дополнительное соглашение
+              .license-card__block.bottom
+                .license-card__price-block
+                  .license-card__price 18 000 ₽
+                  .license-card__price-text за 12 месяцев
+                +button('Продлить', 's', 'primary', 'license-card__button')
+            .license-card.success
+              .license-card__block
+                .license-card__title Расширенная
+                .license-card__badge
+                  +status-ok('Лицензия до 31.12.2025')
+              .license-card__block
+                .license-card__main-li
+                  +icon-ok('license-card__main-li-icon')
+                  .license-card__main-li-text Соглашение о персональных данных
+                .license-card__main-li
+                  +icon-ok('license-card__main-li-icon')
+                  .license-card__main-li-text Дополнительное соглашение
+              .license-card__block.bottom
+                .license-card__price-block
+                  .license-card__price 18 000 ₽
+                  .license-card__price-text за 12 месяцев
+                +button('Продлить', 's', 'primary', 'license-card__button')
+            .license-card.danger
+              .license-card__block
+                .license-card__title Расширенная
+                .license-card__badge
+                  +status-error('Срок лицензии истек 31.12.2025')
+              .license-card__block
+                .license-card__main-li
+                  +icon-ok('license-card__main-li-icon')
+                  .license-card__main-li-text Соглашение о персональных данных
+                .license-card__main-li
+                  +icon-ok('license-card__main-li-icon')
+                  .license-card__main-li-text Дополнительное соглашение
+              .license-card__block.bottom
+                .license-card__price-block
+                  .license-card__price 18 000 ₽
+                  .license-card__price-text за 12 месяцев
+                +button('Продлить', 's', 'primary', 'license-card__button')

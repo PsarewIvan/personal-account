@@ -6,6 +6,32 @@ block variables
 block content
     include ../includes/header.pug
     include ../components/h2.pug
+    include ../components/h3.pug
+    include ../components/radio.pug
+    include ../components/toggle.pug
+    include ../components/pass-input.pug
+    include ../components/select.pug
+    include ../components/text-input.pug
+    include ../components/button.pug
 
     .main-content
-        +h2('Уведомления')
+        .notification-wrapper
+            +h2('Уведомления')
+            .notification-text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+            form.notification__form
+                .notification__radio
+                    +radio([{id: 'radio-value1', text: 'Radiobutton text', description: 'Описание события', checked: true}, {id: 'radio-value2', text: 'Radiobutton text', description: 'Очень длинное описание события, которое может занимать несколько строк и все равно не раскрывать сути уведомления' }], 'radio-name')
+                +h3('Выберите шлюз')
+                .notification__inputs
+                    +select([{value: 'value1', text: 'http://www.mobipace.ru/'},{value: 'value2', text: 'http://www.mobipace.ru/'},{value: 'value3', text: 'http://www.mobipace.ru/'}], '', 'Шлюз', 'notification__select')
+                    +text-input('Логин', '', 'Пользователь', '', '')
+                    +pass-input('Пароль')
+                .notification__toggles
+                    +toggle({id: 'toggle-value1', text: 'Событие', description: 'Описание события'}, 'toggle-name-1')
+                    +toggle({id: 'toggle-value2', text: 'Событие', description: 'Описание события', checked: true}, 'toggle-name-1')
+                    +toggle({id: 'toggle-value3', text: 'Событие', description: 'Описание события',  checked: true}, 'toggle-name-1')
+                    +toggle({id: 'toggle-value4', text: 'Событие', description: 'Описание события'}, 'toggle-name-1')
+                    +toggle({id: 'toggle-value5', text: 'Событие', description: 'Описание события'}, 'toggle-name-1')
+                    +toggle({id: 'toggle-value6', text: 'Событие', description: 'Описание события', checked: true}, 'toggle-name-1')
+                .notification__buttons
+                    +button('Сохранить', 'l')

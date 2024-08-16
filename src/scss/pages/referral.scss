@@ -1,0 +1,231 @@
+.referral-wrapper {
+    max-width: 720px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.referral {
+    &__title {
+        max-width: 480px;
+    }
+
+    &__list {
+        padding: 0 0 0 20px;
+        margin: 0;
+    }
+
+    &__li {
+        color: #1f1f1f;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    &__text {
+        color: #1f1f1f;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    &__buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 24px 0 8px;
+    }
+
+    &__button {
+        width: fit-content;
+    }
+
+    &__link-button {
+        width: fit-content;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        color: #006fbc;
+        font-size: 14px;
+        line-height: 20px;
+        transition: color 0.2s;
+
+        &:active {
+            color: #00539d;
+        }
+    }
+
+    &__graph {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+        padding: 8px 0;
+    }
+}
+
+.graph {
+    display: flex;
+    flex-direction: column;
+    min-width: 218px;
+    padding-bottom: 46px;
+
+    &__head {
+        display: flex;
+        padding: 0 8px 8px;
+        justify-content: space-between;
+    }
+
+    &__head-text {
+        color: #1f1f1f;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    &__progress {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin: 0 8px;
+    }
+
+    &__bar {
+        height: 8px;
+        border-radius: 99px;
+        background-color: rgba(0, 0, 0, 0.08);
+    }
+
+    &__fill-bar-wrapper {
+        position: absolute;
+        height: 8px;
+        left: 0;
+        right: 0;
+        margin-left: 7.5px;
+        margin-right: 7.5px;
+    }
+
+    &__fill-bar {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 8px;
+        width: var(--percent-value);
+        background-color: #75b872;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: -7.5px;
+            top: 0;
+            width: 7.5px;
+            height: 8px;
+            background-color: #75b872;
+            border-radius: 99px 0 0 99px;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: -4px;
+            width: 1px;
+            height: 16px;
+            background-color: #75b872;
+        }
+    }
+
+    &__marks {
+        height: 4px;
+        margin: 0 7.5px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__mark {
+        width: 1px;
+        height: 4px;
+        border-radius: 0 0 99px 99px;
+        background-color: rgba(0, 0, 0, 0.16);
+    }
+
+    &__percent {
+        position: absolute;
+        top: 12px;
+        width: 32px;
+        color: #8f8f8f;
+        text-align: center;
+        font-size: 10px;
+        line-height: 14px;
+
+        &.start {
+            left: 0;
+        }
+
+        &.end {
+            right: 0;
+        }
+    }
+
+    &__tooltip-wrapper {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-left: 7.5px;
+        margin-right: 7.5px;
+    }
+
+    &__tooltip {
+        position: absolute;
+        bottom: -18px;
+        left: var(--percent-value);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 82px;
+        height: 40px;
+        box-sizing: border-box;
+        padding: 8px 12px;
+        border-radius: 8px;
+        background: rgba(0, 0, 0, 0.64);
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+
+        &.align-left {
+            transform: translate(calc(-100% + 15px), 100%);
+
+            .graph__tooltip-arrow {
+                right: 10px;
+            }
+        }
+
+        &.align-right {
+            transform: translate(-15px, 100%);
+
+            .graph__tooltip-arrow {
+                left: 10px;
+            }
+        }
+
+        &.align-center {
+            transform: translate(-50%, 100%);
+
+            .graph__tooltip-arrow {
+                left: 33.5px;
+            }
+        }
+    }
+
+    &__tooltip-arrow {
+        position: absolute;
+        top: -6px;
+        gap: 4px;
+        width: 12px;
+        height: 6px;
+        fill: rgba(0, 0, 0, 0.64);
+        transform: rotate(180deg);
+    }
+
+    &__tooltip-icon {
+        fill: rgba(255, 255, 255, 0.64);
+    }
+}

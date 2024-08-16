@@ -1,0 +1,56 @@
+.access-form {
+    display: flex;
+    gap: 16px;
+    padding: 8px 0;
+}
+
+.access-search-input {
+    width: 280px;
+}
+
+.access-params-select {
+    min-width: 152px;
+}
+
+.access-table {
+    grid-template-columns: 128fr 96fr 192fr 632fr 56fr;
+
+    &__button-link {
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        color: #006fbc;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+        transition: color 0.2s;
+
+        &:hover {
+            color: #00539d;
+        }
+    }
+
+    .full-width {
+        display: block;
+        grid-column: span 5;
+    }
+}
+
+.access-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.access-tag {
+    min-height: 36px;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.04);
+    color: #5c5c5c;
+    font-size: 14px;
+    line-height: 20px;
+}
