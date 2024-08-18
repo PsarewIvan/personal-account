@@ -8,6 +8,10 @@
         color: #5c5c5c;
         font-size: 12px;
         line-height: 1.33;
+
+        @include mobile {
+            margin-right: 60px;
+        }
     }
 
     &__input {

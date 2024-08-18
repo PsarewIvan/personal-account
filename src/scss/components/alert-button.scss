@@ -6,6 +6,10 @@
     border-radius: 8px;
     background: rgba(255, 59, 56, 0.08);
 
+    @include mobile {
+        gap: 16px;
+    }
+
     &__content {
         display: flex;
         flex-direction: column;
@@ -23,9 +27,19 @@
         font-size: 16px;
         line-height: 1.5;
         color: #1f1f1f;
+
+        @include mobile {
+            font-size: 14px;
+            line-height: 20px;
+        }
     }
 
     &__button {
         width: fit-content;
+
+        @include mobile {
+            width: 100%;
+            justify-content: center;
+        }
     }
 }

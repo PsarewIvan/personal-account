@@ -1,5 +1,8 @@
 .notification-wrapper {
     max-width: 720px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .notification-text {
@@ -23,6 +26,15 @@
     &__inputs {
         display: flex;
         gap: 32px;
+
+        @include mobile {
+            flex-direction: column;
+            gap: 16px;
+
+            .select-component-wrapper .select-component {
+                max-width: none;
+            }
+        }
     }
 
     &__select {
@@ -38,5 +50,12 @@
     &__buttons {
         display: flex;
         padding-top: 16px;
+
+        @include mobile {
+            button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
     }
 }

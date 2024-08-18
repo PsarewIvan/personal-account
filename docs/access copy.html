@@ -12,20 +12,10 @@
     <link href="https://unpkg.com/slim-select@latest/dist/slimselect.css" rel="stylesheet">
   </head>
   <body>
-    <header class="header js-header">
-      <button class="header-burger js-header-burger" type="button">
-            <svg class="header-burger__icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M3 6C3 5.58579 3.33579 5.25 3.75 5.25H20.25C20.6642 5.25 21 5.58579 21 6C21 6.41421 20.6642 6.75 20.25 6.75H3.75C3.33579 6.75 3 6.41421 3 6Z"></path>
-              <path d="M3 12C3 11.5858 3.33579 11.25 3.75 11.25H20.25C20.6642 11.25 21 11.5858 21 12C21 12.4142 20.6642 12.75 20.25 12.75H3.75C3.33579 12.75 3 12.4142 3 12Z"></path>
-              <path d="M3.75 17.25C3.33579 17.25 3 17.5858 3 18C3 18.4142 3.33579 18.75 3.75 18.75H20.25C20.6642 18.75 21 18.4142 21 18C21 17.5858 20.6642 17.25 20.25 17.25H3.75Z"></path>
-            </svg>
-            <svg class="header-burger__icon hidden" width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M13.0303 4.03033C13.3232 3.73744 13.3232 3.26256 13.0303 2.96967C12.7374 2.67678 12.2626 2.67678 11.9697 2.96967L8 6.93934L4.03033 2.96967C3.73744 2.67678 3.26256 2.67678 2.96967 2.96967C2.67678 3.26256 2.67678 3.73744 2.96967 4.03033L6.93934 8L2.96967 11.9697C2.67678 12.2626 2.67678 12.7374 2.96967 13.0303C3.26256 13.3232 3.73744 13.3232 4.03033 13.0303L8 9.06066L11.9697 13.0303C12.2626 13.3232 12.7374 13.3232 13.0303 13.0303C13.3232 12.7374 13.3232 12.2626 13.0303 11.9697L9.06066 8L13.0303 4.03033Z"></path>
-            </svg>
-      </button>
+    <header class="header">
       <div class="title-wrapper">
         <h1 class="title">Картотека</h1>
-        <div class="actions js-header-actions">
+        <div class="actions">
               <div class="status status_ok">
                     <svg class="status__icon status__icon_ok" width="32" height="32" viewBox="0 0 32 32" fill="none">
                       <path d="M16 3C13.4288 3 10.9154 3.76244 8.77759 5.1909C6.63975 6.61935 4.9735 8.64968 3.98956 11.0251C3.00563 13.4006 2.74818 16.0144 3.24979 18.5362C3.7514 21.0579 4.98953 23.3743 6.80761 25.1924C8.62569 27.0105 10.9421 28.2486 13.4638 28.7502C15.9856 29.2518 18.5994 28.9944 20.9749 28.0104C23.3503 27.0265 25.3806 25.3603 26.8091 23.2224C28.2376 21.0846 29 18.5712 29 16C28.9964 12.5533 27.6255 9.24882 25.1884 6.81163C22.7512 4.37445 19.4467 3.00364 16 3ZM21.7075 13.7075L14.7075 20.7075C14.6146 20.8005 14.5043 20.8742 14.3829 20.9246C14.2615 20.9749 14.1314 21.0008 14 21.0008C13.8686 21.0008 13.7385 20.9749 13.6171 20.9246C13.4957 20.8742 13.3854 20.8005 13.2925 20.7075L10.2925 17.7075C10.1049 17.5199 9.99944 17.2654 9.99944 17C9.99944 16.7346 10.1049 16.4801 10.2925 16.2925C10.4801 16.1049 10.7346 15.9994 11 15.9994C11.2654 15.9994 11.5199 16.1049 11.7075 16.2925L14 18.5863L20.2925 12.2925C20.3854 12.1996 20.4957 12.1259 20.6171 12.0756C20.7385 12.0253 20.8686 11.9994 21 11.9994C21.1314 11.9994 21.2615 12.0253 21.3829 12.0756C21.5043 12.1259 21.6146 12.1996 21.7075 12.2925C21.8004 12.3854 21.8741 12.4957 21.9244 12.6171C21.9747 12.7385 22.0006 12.8686 22.0006 13C22.0006 13.1314 21.9747 13.2615 21.9244 13.3829C21.8741 13.5043 21.8004 13.6146 21.7075 13.7075Z"></path>
@@ -47,19 +37,25 @@
                 <div class="status__text status__text_error">Срок лицензии истек 31.12.2025
                 </div>
               </div>
-              <div class="status header-status-main">
-                <div class="status__text status__text">Получено 997 согласий
-                </div>
-              </div>
-        </div>
-        <div class="actions-mobile js-header-actions-mobile hidden">
               <div class="status">
                 <div class="status__text status__text">Получено 997 согласий
                 </div>
               </div>
         </div>
       </div>
-      <div class="user js-nav-user">
+      <nav class="nav">
+        <ul class="nav_list">
+          <li class="nav-element"><a class="nav-link" href="/">Лента событий</a></li>
+          <li class="nav-element"><a class="nav-link" href="/settings.html">Настройки соглашения</a></li>
+          <li class="nav-element"><a class="nav-link" href="/notifications.html">Уведомления</a></li>
+          <li class="nav-element"><a class="nav-link nav-link_active" href="/access.html">Доступы</a></li>
+          <li class="nav-element"><a class="nav-link" href="/license.html">Лицензии</a></li>
+          <li class="nav-element"><a class="nav-link" href="/referral.html">Реферальная программа</a></li>
+          <li class="nav-element"><a class="nav-link" href="/history.html">История изменений</a></li>
+          <li class="nav-element"><a class="nav-link" href="/howitwork.html">Как это работает?</a></li>
+        </ul>
+      </nav>
+      <div class="user">
         <div class="user__content">
           <div class="user__name">Ромашка на лугу весенним майским утром</div>
           <div class="user__email">konstantinopolsky_konstantin@email.ru</div>
@@ -76,22 +72,18 @@
         </button>
       </div>
     </header>
-    <div class="main-content" id="js-main-content">
-          <div class="alert-button">
-            <div class="alert-button__content">
-              <div class="alert-button__title">Телефон не авторизован</div>
-              <div class="alert-button__text">Внимание, сообщения не отправляются. Необходимо привязать рабочий телефон.</div>
-            </div>
-                <button class="button s primary alert-button__button" type="button">Авторизовать
-                </button>
+    <div class="main-content">
+          <div class="title-h2">
+            <h2 class="title-h2__text">Доступы</h2>
+            <div class="title-h2__label"></div>
           </div>
-      <form class="index-form">
-        <div class="index-phone">
-              <div class="search-input js-search-input-node index-search-input_not-auth">
+      <form class="access-form">
+        <div class="access-phone">
+              <div class="search-input js-search-input-node access-search-input">
                     <svg class="search-input__icon-search" width="24" height="24" viewBox="0 0 24 24" fill="none">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M10.875 2.25C6.11154 2.25 2.25 6.11154 2.25 10.875C2.25 15.6385 6.11154 19.5 10.875 19.5C12.9867 19.5 14.9212 18.7411 16.4205 17.4812L20.4697 21.5303C20.7626 21.8232 21.2374 21.8232 21.5303 21.5303C21.8232 21.2374 21.8232 20.7626 21.5303 20.4697L17.4812 16.4205C18.7411 14.9212 19.5 12.9867 19.5 10.875C19.5 6.11154 15.6385 2.25 10.875 2.25ZM3.75 10.875C3.75 6.93997 6.93997 3.75 10.875 3.75C14.81 3.75 18 6.93997 18 10.875C18 14.81 14.81 18 10.875 18C6.93997 18 3.75 14.81 3.75 10.875Z"></path>
                     </svg>
-                <input class="search-input__input js-search-input" type="text" placeholder="Телефон клиента" value="">
+                <input class="search-input__input js-search-input" type="text" placeholder="Имя или email" value="">
                 <button class="search-input__reset js-search-input-reset" type="button">
                       <svg class="search-input__icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path d="M13.0303 4.03033C13.3232 3.73744 13.3232 3.26256 13.0303 2.96967C12.7374 2.67678 12.2626 2.67678 11.9697 2.96967L8 6.93934L4.03033 2.96967C3.73744 2.67678 3.26256 2.67678 2.96967 2.96967C2.67678 3.26256 2.67678 3.73744 2.96967 4.03033L6.93934 8L2.96967 11.9697C2.67678 12.2626 2.67678 12.7374 2.96967 13.0303C3.26256 13.3232 3.73744 13.3232 4.03033 13.0303L8 9.06066L11.9697 13.0303C12.2626 13.3232 12.7374 13.3232 13.0303 13.0303C13.3232 12.7374 13.3232 12.2626 13.0303 11.9697L9.06066 8L13.0303 4.03033Z"></path>
@@ -99,63 +91,132 @@
                 </button>
               </div>
         </div>
-        <div class="index-qr_content">
-          <button class="index-qr_content__link js-qr-button" type="button">
-                <svg class="index-qr_content__icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M9.75 3.75H5.25C4.85218 3.75 4.47064 3.90804 4.18934 4.18934C3.90804 4.47064 3.75 4.85218 3.75 5.25V9.75C3.75 10.1478 3.90804 10.5294 4.18934 10.8107C4.47064 11.092 4.85218 11.25 5.25 11.25H9.75C10.1478 11.25 10.5294 11.092 10.8107 10.8107C11.092 10.5294 11.25 10.1478 11.25 9.75V5.25C11.25 4.85218 11.092 4.47064 10.8107 4.18934C10.5294 3.90804 10.1478 3.75 9.75 3.75ZM9.75 9.75H5.25V5.25H9.75V9.75ZM9.75 12.75H5.25C4.85218 12.75 4.47064 12.908 4.18934 13.1893C3.90804 13.4706 3.75 13.8522 3.75 14.25V18.75C3.75 19.1478 3.90804 19.5294 4.18934 19.8107C4.47064 20.092 4.85218 20.25 5.25 20.25H9.75C10.1478 20.25 10.5294 20.092 10.8107 19.8107C11.092 19.5294 11.25 19.1478 11.25 18.75V14.25C11.25 13.8522 11.092 13.4706 10.8107 13.1893C10.5294 12.908 10.1478 12.75 9.75 12.75ZM9.75 18.75H5.25V14.25H9.75V18.75ZM18.75 3.75H14.25C13.8522 3.75 13.4706 3.90804 13.1893 4.18934C12.908 4.47064 12.75 4.85218 12.75 5.25V9.75C12.75 10.1478 12.908 10.5294 13.1893 10.8107C13.4706 11.092 13.8522 11.25 14.25 11.25H18.75C19.1478 11.25 19.5294 11.092 19.8107 10.8107C20.092 10.5294 20.25 10.1478 20.25 9.75V5.25C20.25 4.85218 20.092 4.47064 19.8107 4.18934C19.5294 3.90804 19.1478 3.75 18.75 3.75ZM18.75 9.75H14.25V5.25H18.75V9.75ZM12.75 16.5V13.5C12.75 13.3011 12.829 13.1103 12.9697 12.9697C13.1103 12.829 13.3011 12.75 13.5 12.75C13.6989 12.75 13.8897 12.829 14.0303 12.9697C14.171 13.1103 14.25 13.3011 14.25 13.5V16.5C14.25 16.6989 14.171 16.8897 14.0303 17.0303C13.8897 17.171 13.6989 17.25 13.5 17.25C13.3011 17.25 13.1103 17.171 12.9697 17.0303C12.829 16.8897 12.75 16.6989 12.75 16.5ZM20.25 15C20.25 15.1989 20.171 15.3897 20.0303 15.5303C19.8897 15.671 19.6989 15.75 19.5 15.75H17.25V19.5C17.25 19.6989 17.171 19.8897 17.0303 20.0303C16.8897 20.171 16.6989 20.25 16.5 20.25H13.5C13.3011 20.25 13.1103 20.171 12.9697 20.0303C12.829 19.8897 12.75 19.6989 12.75 19.5C12.75 19.3011 12.829 19.1103 12.9697 18.9697C13.1103 18.829 13.3011 18.75 13.5 18.75H15.75V13.5C15.75 13.3011 15.829 13.1103 15.9697 12.9697C16.1103 12.829 16.3011 12.75 16.5 12.75C16.6989 12.75 16.8897 12.829 17.0303 12.9697C17.171 13.1103 17.25 13.3011 17.25 13.5V14.25H19.5C19.6989 14.25 19.8897 14.329 20.0303 14.4697C20.171 14.6103 20.25 14.8011 20.25 15ZM20.25 18V19.5C20.25 19.6989 20.171 19.8897 20.0303 20.0303C19.8897 20.171 19.6989 20.25 19.5 20.25C19.3011 20.25 19.1103 20.171 18.9697 20.0303C18.829 19.8897 18.75 19.6989 18.75 19.5V18C18.75 17.8011 18.829 17.6103 18.9697 17.4697C19.1103 17.329 19.3011 17.25 19.5 17.25C19.6989 17.25 19.8897 17.329 20.0303 17.4697C20.171 17.6103 20.25 17.8011 20.25 18Z"></path>
-                </svg><span class="index-qr_content__text">QR-код для клиентов</span>
-          </button>
+        <div class="access-params">
+              <div class="select-component-wrapper">
+                <select class="select-component access-params-select js-select-component" data-placeholder="Доступ">
+                  <option class="select-component__option" value="search">Поиск согласия</option>
+                  <option class="select-component__option" value="companyData">Данные компании</option>
+                  <option class="select-component__option" value="mail">Адреса эл. почты</option>
+                  <option class="select-component__option" value="mainOferta">Текст основного соглашения</option>
+                  <option class="select-component__option" value="additionalOferta">Текст доп. соглашения</option>
+                  <option class="select-component__option" value="notifications">Уведомления</option>
+                  <option class="select-component__option" value="license">Лицензии</option>
+                  <option class="select-component__option" value="access">Доступы</option>
+                  <option class="select-component__option" value="referral">Реферальная программа</option>
+                  <option class="select-component__option" value="history">История</option>
+                  <option class="select-component__option" value="reels">Лента событий</option>
+                </select>
+              </div>
+        </div>
+        <div class="access-submit">
+              <button class="button s primary " type="button">Показать
+              </button>
         </div>
       </form>
-      <div class="table index-table-not-auth">
+          <div class="title-h3">
+            <h3 class="title-h3__text">Список пользователей</h3>
+          </div>
+      <div class="table access-table">
         <div class="table-head">
-          <div class="table-cell-h">Дата</div>
-          <div class="table-cell-h">Телефон</div>
-          <div class="table-cell-h">Имя клиента</div>
-          <div class="table-cell-h">Согласие</div>
+          <div class="table-cell-h">Имя</div>
           <div class="table-cell-h">Статус</div>
+          <div class="table-cell-h">Email</div>
+          <div class="table-cell-h">Доступы</div>
+          <div class="table-cell-h"></div>
         </div>
-        <div class="table-row">
-          <div class="table-cell">00.00.0000 00:00</div>
-          <div class="table-cell">+7 (000) 000-00-00</div>
-          <div class="table-cell">Константинопольский Константин Константинович</div>
-          <div class="table-cell">Основное</div>
+        <div class="table-row full-width">
           <div class="table-cell">
-            <div class="badge badge_green">Согласие</div>
+            <button class="access-table__button-link">Добавить нового пользователя</button>
           </div>
         </div>
         <div class="table-row">
-          <div class="table-cell">00.00.0000 00:00</div>
-          <div class="table-cell">+7 (000) 000-00-00</div>
-          <div class="table-cell">Константинопольский Константин Константинович</div>
-          <div class="table-cell">Дополнительное</div>
-          <div class="table-cell">
-            <div class="badge badge_green">Согласие</div>
+          <div class="table-cell align-start">Константин</div>
+          <div class="table-cell align-start">
+            <div class="badge badge_green">Активен</div>
+          </div>
+          <div class="table-cell align-start ellipsis">konstantinopolsky_konstantin@email.ru</div>
+          <div class="table-cell align-start">
+            <div class="access-tags">
+              <div class="access-tag">Поиск согласия</div>
+              <div class="access-tag">Данные компании</div>
+              <div class="access-tag">Адреса эл. почты</div>
+              <div class="access-tag">Текст основного соглашения</div>
+              <div class="access-tag">Текст доп. соглашения</div>
+              <div class="access-tag">Уведомления</div>
+              <div class="access-tag">Лицензии</div>
+              <div class="access-tag">Доступы</div>
+              <div class="access-tag">Реферальная программа</div>
+              <div class="access-tag">История</div>
+              <div class="access-tag">Лента событий</div>
+            </div>
+          </div>
+          <div class="table-cell align-start">
+            <button class="table-button tooltip-trigger js-tooltip-trigger" type="button">
+                  <svg class="table-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.2197 2.46967C15.5126 2.17678 15.9874 2.17678 16.2803 2.46967L21.5303 7.71967C21.8232 8.01256 21.8232 8.48744 21.5303 8.78033L9.53033 20.7803C9.38968 20.921 9.19891 21 9 21H3.75C3.33579 21 3 20.6642 3 20.25V15C3 14.8011 3.07902 14.6103 3.21967 14.4697L15.2197 2.46967ZM13.8107 6L18 10.1893L19.9393 8.25L15.75 4.06066L13.8107 6ZM16.9393 11.25L12.75 7.06066L4.5 15.3107V19.5H8.68934L16.9393 11.25Z"></path>
+                  </svg><span class="tooltip js-tooltip">Редактировать
+                        <svg class="tooltip__arrow" width="12" height="6" viewBox="0 0 12 6" fill="none">
+                          <path d="M5.29292 5.70711C5.68345 6.09763 6.31661 6.09763 6.70714 5.70711L11.7071 0.707107C11.8984 0.515859 12 0.260166 12.0001 0H0C5.74041e-05 0.260166 0.101675 0.515859 0.292922 0.707107L5.29292 5.70711Z"></path>
+                        </svg></span>
+            </button>
           </div>
         </div>
         <div class="table-row">
-          <div class="table-cell">00.00.0000 00:00</div>
-          <div class="table-cell">+7 (000) 000-00-00</div>
-          <div class="table-cell">Константинопольский Константин Константинович</div>
-          <div class="table-cell">Основное</div>
-          <div class="table-cell">
-            <div class="badge badge_red">Отзыв</div>
+          <div class="table-cell align-start">Константин</div>
+          <div class="table-cell align-start">
+            <div class="badge badge_green">Активен</div>
+          </div>
+          <div class="table-cell align-start ellipsis">konstantinopolsky_konstantin@email.ru</div>
+          <div class="table-cell align-start">
+            <div class="access-tags">
+              <div class="access-tag">Поиск согласия</div>
+              <div class="access-tag">Данные компании</div>
+              <div class="access-tag">Адреса эл. почты</div>
+              <div class="access-tag">Текст основного соглашения</div>
+              <div class="access-tag">Текст доп. соглашения</div>
+              <div class="access-tag">Уведомления</div>
+              <div class="access-tag">Лицензии</div>
+              <div class="access-tag">Доступы</div>
+              <div class="access-tag">Реферальная программа</div>
+              <div class="access-tag">История</div>
+              <div class="access-tag">Лента событий</div>
+            </div>
+          </div>
+          <div class="table-cell align-start">
+            <button class="table-button tooltip-trigger js-tooltip-trigger" type="button">
+                  <svg class="table-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.2197 2.46967C15.5126 2.17678 15.9874 2.17678 16.2803 2.46967L21.5303 7.71967C21.8232 8.01256 21.8232 8.48744 21.5303 8.78033L9.53033 20.7803C9.38968 20.921 9.19891 21 9 21H3.75C3.33579 21 3 20.6642 3 20.25V15C3 14.8011 3.07902 14.6103 3.21967 14.4697L15.2197 2.46967ZM13.8107 6L18 10.1893L19.9393 8.25L15.75 4.06066L13.8107 6ZM16.9393 11.25L12.75 7.06066L4.5 15.3107V19.5H8.68934L16.9393 11.25Z"></path>
+                  </svg><span class="tooltip js-tooltip">Редактировать
+                        <svg class="tooltip__arrow" width="12" height="6" viewBox="0 0 12 6" fill="none">
+                          <path d="M5.29292 5.70711C5.68345 6.09763 6.31661 6.09763 6.70714 5.70711L11.7071 0.707107C11.8984 0.515859 12 0.260166 12.0001 0H0C5.74041e-05 0.260166 0.101675 0.515859 0.292922 0.707107L5.29292 5.70711Z"></path>
+                        </svg></span>
+            </button>
+          </div>
+        </div>
+        <div class="table-row">
+          <div class="table-cell align-start">Константин</div>
+          <div class="table-cell align-start">
+            <div class="badge badge_gray">Активен</div>
+          </div>
+          <div class="table-cell align-start ellipsis">konstantinopolsky_konstantin@email.ru</div>
+          <div class="table-cell align-start">
+            <div class="access-tags">
+              <div class="access-tag">Поиск согласия</div>
+            </div>
+          </div>
+          <div class="table-cell align-start">
+            <button class="table-button tooltip-trigger js-tooltip-trigger" type="button">
+                  <svg class="table-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.2197 2.46967C15.5126 2.17678 15.9874 2.17678 16.2803 2.46967L21.5303 7.71967C21.8232 8.01256 21.8232 8.48744 21.5303 8.78033L9.53033 20.7803C9.38968 20.921 9.19891 21 9 21H3.75C3.33579 21 3 20.6642 3 20.25V15C3 14.8011 3.07902 14.6103 3.21967 14.4697L15.2197 2.46967ZM13.8107 6L18 10.1893L19.9393 8.25L15.75 4.06066L13.8107 6ZM16.9393 11.25L12.75 7.06066L4.5 15.3107V19.5H8.68934L16.9393 11.25Z"></path>
+                  </svg><span class="tooltip js-tooltip">Редактировать
+                        <svg class="tooltip__arrow" width="12" height="6" viewBox="0 0 12 6" fill="none">
+                          <path d="M5.29292 5.70711C5.68345 6.09763 6.31661 6.09763 6.70714 5.70711L11.7071 0.707107C11.8984 0.515859 12 0.260166 12.0001 0H0C5.74041e-05 0.260166 0.101675 0.515859 0.292922 0.707107L5.29292 5.70711Z"></path>
+                        </svg></span>
+            </button>
           </div>
         </div>
       </div>
     </div>
-        <div class="popup-qr hidden js-qr-popup">
-          <div class="popup-qr__header">
-            <button class="popup-qr__button js-close-qr-popup" type="button">
-                  <svg class="popup-qr__icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M13.0303 4.03033C13.3232 3.73744 13.3232 3.26256 13.0303 2.96967C12.7374 2.67678 12.2626 2.67678 11.9697 2.96967L8 6.93934L4.03033 2.96967C3.73744 2.67678 3.26256 2.67678 2.96967 2.96967C2.67678 3.26256 2.67678 3.73744 2.96967 4.03033L6.93934 8L2.96967 11.9697C2.67678 12.2626 2.67678 12.7374 2.96967 13.0303C3.26256 13.3232 3.73744 13.3232 4.03033 13.0303L8 9.06066L11.9697 13.0303C12.2626 13.3232 12.7374 13.3232 13.0303 13.0303C13.3232 12.7374 13.3232 12.2626 13.0303 11.9697L9.06066 8L13.0303 4.03033Z"></path>
-                  </svg>
-            </button>
-          </div>
-          <div class="popup-qr__content">
-            <div class="popup-qr__text">Для подтверждения согласия на обработку и хранение персональных данных просканируйте QR-код и перейдите по ссылке</div><img class="popup-qr__img" src="img/qr.jpg">
-          </div>
-        </div>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/js/datepicker.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/js/locales/ru.js"></script>

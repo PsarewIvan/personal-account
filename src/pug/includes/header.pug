@@ -2,17 +2,28 @@ block content
     include ../components/status.pug
     include ../components/tooltip.pug
     include ../icons/icon-exit.pug
+    include ../icons/icon-burger.pug
+    include ../icons/icon-cross.pug
 
-    header.header
+    header.header.js-header
+        button.header-burger.js-header-burger(type='button')
+            +icon-burger('header-burger__icon')
+            +icon-cross('header-burger__icon hidden')
         .title-wrapper
             h1.title Картотека
-            .actions
+            .actions.js-header-actions
                 +status-ok('Лицензия до 31.12.2025')
                 +status-warning('Лицензия до 31.12.2025')
                 +status-error('Срок лицензии истек 31.12.2025')
+                +status-text('Получено 997 согласий', 'header-status-main')
+            .actions-mobile.js-header-actions-mobile.hidden
                 +status-text('Получено 997 согласий')
         if page !== 'index-not-auth'
-            nav.nav
+            nav.nav.js-nav
+                .action-nav-mobile
+                    +status-ok('Лицензия до 31.12.2025')
+                    +status-warning('Лицензия до 31.12.2025')
+                    +status-error('Срок лицензии истек 31.12.2025')
                 ul.nav_list
                     li.nav-element
                         a.nav-link(href='/' class=page === 'index' ? 'nav-link_active' : '') Лента событий
@@ -30,7 +41,7 @@ block content
                         a.nav-link(href='/history.html' class=page === 'history' ? 'nav-link_active' : '') История изменений
                     li.nav-element
                         a.nav-link(href='/howitwork.html' class=page === 'howitwork' ? 'nav-link_active' : '') Как это работает?
-        .user
+        .user.js-nav-user
             .user__content
                 .user__name Ромашка на лугу весенним майским утром
                 .user__email konstantinopolsky_konstantin@email.ru

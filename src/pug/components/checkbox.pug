@@ -1,0 +1,9 @@
+include ../icons/icon-ok.pug
+
+mixin checkbox(elements, name)
+    .checkbox-wrapper
+        each element in elements
+            .checkbox
+                input(type="checkbox" id=element.name name=name checked=element.checked)
+                label.checkbox__label(for=element.name)= element.text
+                    +icon-ok('checkbox__icon-ok')

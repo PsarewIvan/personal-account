@@ -1,5 +1,6 @@
 .header {
     position: fixed;
+    z-index: 900;
     left: 0;
     top: 0;
     bottom: 0;
@@ -8,6 +9,52 @@
     width: 272px;
     padding: 24px 16px;
     border-right: 1px solid #d6d6d6;
+    background-color: #fff;
+
+    @include tablet {
+        right: 0;
+        bottom: auto;
+        width: auto;
+        display: grid;
+        grid-template-columns: 48px 1fr 208px;
+        padding: 8px 0 8px;
+        margin: 0 24px;
+        border-right: none;
+        border-bottom: 1px solid #d6d6d6;
+    }
+
+    @include mobile {
+        margin: 0;
+        padding: 8px;
+        grid-template-columns: 48px 1fr;
+    }
+}
+
+.header-burger {
+    display: none;
+    visibility: hidden;
+
+    @include tablet {
+        visibility: visible;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        margin: 0 8px 0 0;
+        border-radius: 8px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+
+        &__icon {
+            width: 16px;
+            height: 16px;
+            fill: #5c5c5c;
+        }
+    }
 }
 
 .title-wrapper {
@@ -16,16 +63,69 @@
     gap: 4px;
     padding: 8px;
     margin-bottom: 16px;
+
+    @include tablet {
+        padding: 4px 0;
+        margin-bottom: 0;
+    }
+
+    @include mobile {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 .title {
     margin: 0;
+    color: #1f1f1f;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+
+    @include tablet {
+    }
 }
 
 .actions {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    margin-top: 4px;
+
+    @include tablet {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 0;
+    }
+
+    @include mobile {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+.actions-mobile {
+    padding: 6px 0 0 6px;
+}
+
+.header-status-main {
+    @include mobile {
+        display: none !important;
+        visibility: hidden;
+    }
+}
+
+.action-nav-mobile {
+    display: none;
+    visibility: hidden;
+
+    @include mobile {
+        visibility: visible;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        margin-top: 4px;
+    }
 }
 
 .nav {
@@ -44,6 +144,22 @@
     &::-webkit-scrollbar-track {
         background-color: #fff;
         border-radius: 10px;
+    }
+
+    @include tablet {
+        position: fixed;
+        top: 113px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #fff;
+        margin-bottom: 0;
+        padding: 16px 32px;
+    }
+
+    @include mobile {
+        top: 57px;
+        padding: 16px;
     }
 }
 
@@ -83,6 +199,12 @@
     padding: 8px 0 8px 8px;
     margin-top: auto;
 
+    @include tablet {
+        padding: 0;
+        margin-left: 16px;
+        margin-top: 0;
+    }
+
     &__content {
         display: flex;
         flex-direction: column;
@@ -90,6 +212,10 @@
         flex-grow: 0;
         width: 184px;
         padding: 8px 0;
+
+        @include tablet {
+            width: 144px;
+        }
     }
 
     &__name {
@@ -97,6 +223,12 @@
         font-weight: 600;
         line-height: 1.43;
         color: #1f1f1f;
+
+        @include tablet {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-wrap: nowrap;
+        }
     }
 
     &__email {

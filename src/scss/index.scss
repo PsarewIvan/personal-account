@@ -32,6 +32,7 @@
 @import './components/toggle.scss';
 @import './components/pass-input.scss';
 @import './components/table.scss';
+@import './components/checkbox.scss';
 
 * {
     box-sizing: border-box;
@@ -58,8 +59,23 @@ body {
     gap: 8px;
     margin-left: 272px;
     padding: 32px;
+
+    @include tablet {
+        margin-left: 0;
+        margin-top: 112px;
+        padding: 16px 32px;
+    }
+
+    @include mobile {
+        padding: 16px;
+        margin-top: 57px;
+    }
 }
 
 .hidden {
     display: none;
+}
+
+.body-lock {
+    overflow: hidden;
 }

@@ -10,7 +10,7 @@ block content
     include ../components/popup-qr.pug
     include ../icons/icon-qr.pug
 
-    .main-content
+    .main-content(id='js-main-content')
         +alert-button('Телефон не авторизован', ['Внимание, сообщения не отправляются. Необходимо привязать рабочий телефон.'], 'Авторизовать')
         form.index-form
             .index-phone

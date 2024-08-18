@@ -20,7 +20,7 @@ mixin status-error(text)
         .status__text.status__text_error
             = text
 
-mixin status-text(text)
-    .status
+mixin status-text(text, className)
+    .status(class=className)
         .status__text.status__text
             = text

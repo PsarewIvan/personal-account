@@ -2,11 +2,21 @@
     display: flex;
     gap: 16px;
     padding: 8px 0;
+
+    @media (max-width: 1280px) {
+        flex-direction: column;
+    }
 }
 
 .index-dates {
     display: flex;
     gap: 16px;
+
+    @include mobile {
+        max-width: 496px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 .index-params {
@@ -16,6 +26,10 @@
 
 .index-datepicker {
     width: 152px;
+
+    @include tablet {
+        width: auto;
+    }
 }
 
 .index-search-input {
@@ -24,10 +38,32 @@
     &_not-auth {
         width: 280px;
     }
+
+    @include tablet {
+        max-width: 240px;
+        width: auto;
+    }
 }
 
 .index-params-select {
     min-width: 152px;
+
+    @include tablet {
+        width: 240px;
+    }
+}
+
+.index-submit {
+    @include mobile {
+        max-width: 496px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+
+        button {
+            justify-content: center;
+        }
+    }
 }
 
 .index-table {
@@ -41,9 +77,11 @@
     }
 }
 
-@media (max-width: 767px) {
+@include mobile {
     .index-table {
-        &__row {
+        grid-template-columns: 1fr;
+
+        .table-row {
             display: grid;
             grid-template-columns: 232fr 40fr 40fr;
             grid-template-areas:
@@ -53,26 +91,41 @@
                 'date cancel print';
         }
 
-        &__row .index-table__cell:nth-child(1) {
+        .table-row .table-cell:nth-child(1) {
             grid-area: date;
+            padding: 4px 0;
+            border-bottom: 1px solid #d6d6d6;
+            color: #5c5c5c;
         }
-        &__row .index-table__cell:nth-child(2) {
+        .table-row .table-cell:nth-child(2) {
             grid-area: phone;
+            padding: 0;
+            color: #5c5c5c;
         }
-        &__row .index-table__cell:nth-child(3) {
+        .table-row .table-cell:nth-child(3) {
             grid-area: name;
+            padding: 8px 0 4px;
         }
-        &__row .index-table__cell:nth-child(4) {
+        .table-row .table-cell:nth-child(4) {
             grid-area: consent;
+            padding: 6px 0;
+            font-size: 12px;
+            line-height: 16px;
         }
-        &__row .index-table__cell:nth-child(5) {
+        .table-row .table-cell:nth-child(5) {
             grid-area: cancel;
+            padding: 0;
+            border-bottom: 1px solid #d6d6d6;
         }
-        &__row .index-table__cell:nth-child(6) {
+        .table-row .table-cell:nth-child(6) {
             grid-area: status;
+            justify-content: flex-end;
+            padding: 4px 0;
         }
-        &__row .index-table__cell:nth-child(7) {
+        .table-row .table-cell:nth-child(7) {
             grid-area: print;
+            padding: 0;
+            border-bottom: 1px solid #d6d6d6;
         }
     }
 }
@@ -115,6 +168,13 @@
             color: #8f8f8f;
             cursor: default;
         }
+
+        @include mobile {
+            &_desktop {
+                display: none;
+                visibility: hidden;
+            }
+        }
     }
 
     &__icon {
@@ -130,7 +190,18 @@
 
 // not-auth
 
+.index-search-input_not-auth {
+    @include mobile {
+        width: 100%;
+    }
+}
+
 .index-qr_content {
+    @include mobile {
+        display: flex;
+        justify-content: center;
+    }
+
     &__link {
         display: flex;
         flex-direction: row;
@@ -161,6 +232,48 @@
 
 .index-table-not-auth {
     grid-template-columns: 124fr 148fr 628fr 128fr 76fr;
+
+    @include mobile {
+        grid-template-columns: 1fr;
+        margin-top: 8px;
+        margin-bottom: 16px;
+
+        .table-row {
+            display: grid;
+            grid-template-columns: 248fr 80fr;
+            grid-template-areas:
+                'consent status'
+                'name name'
+                'phone phone'
+                'date date';
+        }
+
+        .table-row .table-cell:nth-child(1) {
+            grid-area: date;
+            padding: 12px 0 4px;
+            border-bottom: 1px solid #d6d6d6;
+            color: #5c5c5c;
+        }
+        .table-row .table-cell:nth-child(2) {
+            grid-area: phone;
+            padding: 0;
+        }
+        .table-row .table-cell:nth-child(3) {
+            grid-area: name;
+            padding: 8px 0 4px;
+        }
+        .table-row .table-cell:nth-child(4) {
+            grid-area: consent;
+            padding: 0;
+            font-size: 12px;
+            line-height: 16px;
+        }
+        .table-row .table-cell:nth-child(5) {
+            grid-area: status;
+            padding: 4px 0;
+            justify-content: flex-end;
+        }
+    }
 
     .table-row .table-cell:nth-child(5),
     .table-row .table-cell:nth-child(7) {

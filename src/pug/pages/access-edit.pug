@@ -1,0 +1,30 @@
+extends ../layout.pug
+
+block variables
+  - var page = 'access'
+
+block content
+    include ../includes/header.pug
+    include ../components/h2.pug
+    include ../components/h3.pug
+    include ../components/text-input.pug
+    include ../components/button.pug
+    include ../components/checkbox.pug
+
+    .main-content(id='js-main-content')
+        +h2('Доступы')
+        form.access-edit-form
+            +h3('Данные пользователя')
+            button.access-edit-button-link(type='button') Отправить данные для входа на электронную почту пользователя
+            .access-two-block
+                +text-input('Имя сотрудника', '', '', '', '')
+                +text-input('Адрес электронной почты', '', '', '', '')
+            .access-pass-block
+                +text-input('Пароль', '', '', '', 'access-pass-block__input')
+                .access-pass-block__text Пароль должен содержать не менее 8 символов
+            +h3('Разрешенные действия')
+            .access-edit-check-block
+                +checkbox([{name: 'access-checkbox-phone-search', text: 'Поиск согласия по номеру телефона', checked: 'true'},{name: 'access-checkbox-data', text: 'Редактирование данных о юридическом лице'},{name: 'access-checkbox-address', text: 'Редактирование адресов электронной почты для получения и отзыва согласий'},{name: 'access-checkbox-detailing-personal-text', text: 'Редактирование уточняющего текста соглашения о персональных данных'},{name: 'access-checkbox-detailing-text', text: 'Редактирование текста дополнительного соглашения'},{name: 'access-checkbox-notifications', text: 'Настройка уведомлений'},{name: 'access-checkbox-license', text: 'Управление лицензиями'},{name: 'access-checkbox-access', text: 'Управление доступами'},{name: 'access-checkbox-referral', text: 'Просмотр реферальной программы'},{name: 'access-checkbox-history', text: 'Просмотр истории изменений'},{name: 'access-checkbox-feed', text: 'Просмотр ленты событий'}], 'access-edit-checkbox')
+            .access-edit-apply-block
+                +button('Отмена', size='s', theme='secondary', '')
+                +button('Сохранить', size='s', theme='primary', 'access-edit-apply-block__apply-button')

@@ -23,6 +23,68 @@
 })();
 
 (() => {
+    let hasTableInit = false;
+    let hasMobileInit = false;
+    let hasMenuOpen = false;
+
+    const burger = document.querySelector('.js-header-burger');
+    const nav = document.querySelector('.js-nav');
+    const user = document.querySelector('.js-nav-user');
+    const mobileActions = document.querySelector('.js-header-actions-mobile');
+
+    const header = document.querySelector('.js-header');
+    const content = document.getElementById('js-main-content');
+
+    burger?.addEventListener('click', onBurgerClick);
+
+    window.addEventListener('resize', initMobileTable);
+    initMobileTable();
+
+    function initMobileTable() {
+        if (window.innerWidth < 1056) {
+            const headerRect = header?.getBoundingClientRect();
+
+            if (!hasTableInit) {
+                nav?.classList.add('hidden');
+            }
+
+            if (content?.stye && headerRect) {
+                content.stye.marginTop = `${headerRect.height}px`;
+            }
+
+            hasTableInit = true;
+        } else if (hasTableInit) {
+            nav?.classList.remove('hidden');
+            hasTableInit = false;
+        }
+
+        if (window.innerWidth < 768) {
+            if (!hasMobileInit) {
+                user?.classList.add('hidden');
+                mobileActions?.classList.remove('hidden');
+            }
+            hasMobileInit = true;
+        } else if (hasMobileInit) {
+            user?.classList.remove('hidden');
+            mobileActions?.classList.add('hidden');
+            hasMobileInit = false;
+        }
+    }
+
+    function onBurgerClick() {
+        if (hasMenuOpen) {
+            hasMenuOpen = false;
+            nav?.classList.add('hidden');
+            document.body.classList.remove('body-lock');
+        } else {
+            hasMenuOpen = true;
+            nav?.classList.remove('hidden');
+            document.body.classList.add('body-lock');
+        }
+    }
+})();
+
+(() => {
     const nodes = document.querySelectorAll('.js-pass-input-node');
 
     nodes.forEach((node) => {
@@ -272,6 +334,7 @@
 
 (() => {
     const TOOLTIP_LEFT_CLASS = 'tooltip_left';
+    const TOOLTIP_BOTTOM_CLASS = 'tooltip_bottom';
 
     document.addEventListener('DOMContentLoaded', function () {
         window.addEventListener('resize', initTooltip);
@@ -292,14 +355,21 @@
 
     function adjustTooltipPosition(trigger, tooltip) {
         tooltip.classList.remove(TOOLTIP_LEFT_CLASS);
+        tooltip.classList.remove(TOOLTIP_BOTTOM_CLASS);
 
         const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
         const tooltipRect = tooltip.getBoundingClientRect();
 
         const tooltipRightPointX = tooltipRect.left + tooltipRect.width;
+        const tooltipTopPointY = tooltipRect.top;
 
         if (tooltipRightPointX > viewportWidth) {
             tooltip.classList.add(TOOLTIP_LEFT_CLASS);
+        }
+
+        if (tooltipTopPointY < 0) {
+            tooltip.classList.add(TOOLTIP_BOTTOM_CLASS);
         }
     }
 })();

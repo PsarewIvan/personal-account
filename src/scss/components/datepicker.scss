@@ -26,6 +26,7 @@
     }
 
     &__input {
+        width: 100%;
         min-height: 36px;
         padding: 0;
         padding-right: 40px;
@@ -108,13 +109,15 @@
                 height: auto;
                 color: #5c5c5c;
                 font-size: 12px;
+                font-weight: 400;
                 line-height: 16px;
-                text-transform: uppercase;
+                text-transform: lowercase;
             }
 
             .day {
                 height: 32px;
                 border-radius: 8px;
+                border: 1px solid transparent;
                 color: #1f1f1f;
                 font-size: 14px;
                 line-height: 20px;
@@ -124,6 +127,19 @@
                     opacity: 0;
                     pointer-events: none;
                     cursor: default;
+                }
+
+                &.today {
+                    background-color: transparent;
+                    border-color: rgba(1, 144, 219, 0.48);
+                    color: #006fbc;
+                }
+
+                &.selected {
+                    border-color: #0190db;
+                    background-color: #0190db;
+                    color: #fff;
+                    font-weight: 400;
                 }
             }
         }

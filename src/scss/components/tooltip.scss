@@ -37,6 +37,18 @@
     }
 }
 
+.tooltip.tooltip_bottom {
+    top: auto;
+    bottom: 0;
+    transform: translateY(calc(100% + 10px));
+
+    .tooltip__arrow {
+        transform: rotate(180deg);
+        bottom: auto;
+        top: -6px;
+    }
+}
+
 .tooltip-trigger {
     position: relative;
 }

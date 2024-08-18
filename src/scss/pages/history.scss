@@ -1,5 +1,35 @@
 .history-table {
     grid-template-columns: 124fr 96fr 884fr;
+
+    @include mobile {
+        display: flex !important;
+        flex-direction: column;
+
+        .table-row {
+            display: grid;
+            grid-template-columns: 248fr 80fr;
+            grid-template-areas:
+                'date type'
+                'data data';
+            border-bottom: 1px solid #d6d6d6;
+        }
+
+        .table-row .table-cell:nth-child(1) {
+            grid-area: date;
+            padding: 0;
+            align-items: center;
+        }
+        .table-row .table-cell:nth-child(2) {
+            grid-area: type;
+            padding: 4px 0;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        .table-row .table-cell:nth-child(3) {
+            grid-area: data;
+            padding: 8px 0;
+        }
+    }
 }
 
 .history {

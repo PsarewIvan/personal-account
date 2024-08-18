@@ -2,10 +2,46 @@
     display: flex;
     gap: 16px;
     padding: 8px 0;
+
+    @include mobile {
+        // flex-direction: column;
+        flex-wrap: wrap;
+    }
+}
+
+.access-phone {
+    @include mobile {
+        width: 100%;
+    }
+}
+
+.access-params {
+    @include mobile {
+        width: calc(50% - 8px);
+
+        .select-component-wrapper .select-component {
+            max-width: none;
+        }
+    }
+}
+
+.access-submit {
+    @include mobile {
+        width: calc(50% - 8px);
+
+        button {
+            width: 100%;
+            justify-content: center;
+        }
+    }
 }
 
 .access-search-input {
     width: 280px;
+
+    @include mobile {
+        width: 100%;
+    }
 }
 
 .access-params-select {
@@ -15,8 +51,46 @@
 .access-table {
     grid-template-columns: 128fr 96fr 192fr 632fr 56fr;
 
+    @include mobile {
+        display: flex !important;
+        flex-direction: column;
+
+        .table-row {
+            display: grid;
+            grid-template-columns: 200fr 80fr 48fr;
+            grid-template-areas:
+                'name status edit'
+                'email email email'
+                'access access access';
+            border-bottom: 1px solid #d6d6d6;
+        }
+
+        .table-row .table-cell:nth-child(1) {
+            grid-area: name;
+            padding: 0;
+            align-items: center;
+        }
+        .table-row .table-cell:nth-child(2) {
+            grid-area: status;
+            padding: 0;
+            align-items: center;
+        }
+        .table-row .table-cell:nth-child(3) {
+            grid-area: email;
+            padding: 0;
+        }
+        .table-row .table-cell:nth-child(4) {
+            grid-area: access;
+            padding: 8px 0;
+        }
+        .table-row .table-cell:nth-child(5) {
+            grid-area: edit;
+            padding: 0 0 0 8px;
+        }
+    }
+
     &__button-link {
-        padding: 0;
+        padding: 2px 0;
         border: none;
         background-color: transparent;
         cursor: pointer;
@@ -34,6 +108,10 @@
     .full-width {
         display: block;
         grid-column: span 5;
+
+        @include mobile {
+            border-bottom: 1px solid #d6d6d6;
+        }
     }
 }
 
@@ -53,4 +131,86 @@
     color: #5c5c5c;
     font-size: 14px;
     line-height: 20px;
+}
+
+// Edit page
+
+.access-edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.access-edit-button-link {
+    width: fit-content;
+    padding: 10px 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: #006fbc;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    transition: all 0.2s;
+
+    &:hover {
+        color: #00539d;
+    }
+
+    @include mobile {
+        padding: 0;
+        text-align: left;
+    }
+}
+
+.access-two-block {
+    max-width: 720px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 8px;
+
+    @include mobile {
+        margin-top: 16px;
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+.access-pass-block {
+    margin-top: 8px;
+    padding-bottom: 20px;
+    margin-bottom: 8px;
+
+    &__input {
+        width: 344px;
+
+        @include mobile {
+            width: 100%;
+        }
+    }
+
+    &__text {
+        margin-top: 4px;
+        color: #5c5c5c;
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
+.access-edit-check-block {
+    margin-top: 8px;
+}
+
+.access-edit-apply-block {
+    display: flex;
+    margin-top: 8px;
+    gap: 8px;
+
+    &__apply-button {
+        @include mobile {
+            width: 100%;
+            justify-content: center;
+        }
+    }
 }

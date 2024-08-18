@@ -14,7 +14,7 @@ block content
     include ../icons/icon-print.pug
     include ../icons/icon-chevron-left.pug
 
-    .main-content
+    .main-content(id='js-main-content')
         +h2('Лента событий')
         form.index-form
             .index-dates
@@ -135,8 +135,8 @@ block content
             button.index-pagination__button(type='button') 1
             button.index-pagination__button.index-pagination__button_active(type='button') 2
             button.index-pagination__button(type='button') 3
-            button.index-pagination__button(type='button') 4
-            button.index-pagination__button(type='button') 5
+            button.index-pagination__button.index-pagination__button_desktop(type='button') 4
+            button.index-pagination__button.index-pagination__button_desktop(type='button') 5
             button.index-pagination__button.index-pagination__button_disabled(type='button') ...
             button.index-pagination__button(type='button') 76
             button.index-pagination__button.index-pagination__button_right(type='button')
