@@ -10,6 +10,7 @@ block content
     include ../components/button.pug
     include ../components/search-input.pug
     include ../components/tooltip.pug
+    include ../components/select.pug
     include ../icons/icon-cancel.pug
     include ../icons/icon-print.pug
     include ../icons/icon-chevron-left.pug
@@ -24,13 +25,9 @@ block content
                 +search-input('Телефон клиента', '', 'index-search-input')
             .index-params
                 .index-params-select.select-component-wrapper
-                  select.select-component.js-select-component(data-placeholder='Согласие')
-                    option.select-component__option(value='main') Основное согласие
-                    option.select-component__option(value='dop') Дополнительное согласие
+                    +select([{value: 'main', text: 'Основное согласие'},{value: 'dop', text: 'Дополнительное согласие'}], 'Согласие', '', '', true)
                 .index-params-select.select-component-wrapper
-                  select.select-component.js-select-component(data-placeholder='Статус')
-                    option.select-component__option(value='main') Получение согласия
-                    option.select-component__option(value='dop') Отзыв согласия
+                    +select([{value: 'main', text: 'Получение согласия'},{value: 'dop', text: 'Отзыв согласия'}], 'Статус', '', '', true)
             .index-submit
                 +button('Показать', size='s', theme='primary')
         .table.index-table

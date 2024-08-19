@@ -19,7 +19,7 @@ block content
             .access-phone
                 +search-input('Имя или email', '', 'access-search-input')
             .access-params
-                +select([{value: 'search', text: 'Поиск согласия'},{value: 'companyData', text: 'Данные компании'},{value: 'mail', text: 'Адреса эл. почты'},{value: 'mainOferta', text: 'Текст основного соглашения'},{value: 'additionalOferta', text: 'Текст доп. соглашения'},{value: 'notifications', text: 'Уведомления'},{value: 'license', text: 'Лицензии'},{value: 'access', text: 'Доступы'},{value: 'referral', text: 'Реферальная программа'},{value: 'history', text: 'История'},{value: 'reels', text: 'Лента событий'}], 'Доступ', '', 'access-params-select')
+                +select([{value: 'search', text: 'Поиск согласия'},{value: 'companyData', text: 'Данные компании'},{value: 'mail', text: 'Адреса эл. почты'},{value: 'mainOferta', text: 'Текст основного соглашения'},{value: 'additionalOferta', text: 'Текст доп. соглашения'},{value: 'notifications', text: 'Уведомления'},{value: 'license', text: 'Лицензии'},{value: 'access', text: 'Доступы'},{value: 'referral', text: 'Реферальная программа'},{value: 'history', text: 'История'},{value: 'reels', text: 'Лента событий'}], 'Доступ', '', 'access-params-select', true)
             .access-submit
                 +button('Показать', size='s', theme='primary')
         +h3('Список пользователей')

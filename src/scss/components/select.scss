@@ -1,5 +1,8 @@
 .select-component-wrapper {
+    position: relative;
+
     .select-component {
+        position: relative;
         max-width: 240px;
         padding: 0 8px;
         height: 36px;
@@ -19,11 +22,41 @@
             box-shadow: none;
         }
 
+        &_selected {
+            background-color: rgba(1, 144, 219, 0.08);
+            border-color: rgba(1, 144, 219, 0.48);
+
+            .select-component__label {
+                color: #006fbc;
+            }
+        }
+
         &__label {
             margin-bottom: 4px;
             color: #5c5c5c;
             font-size: 12px;
             line-height: 16px;
+        }
+
+        &__reset {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 34px;
+            top: 1px;
+            right: 8px;
+            padding: 0;
+            border: none;
+            cursor: pointer;
+            background-color: transparent;
+        }
+
+        &__reset-icon {
+            width: 16px;
+            height: 16px;
+            fill: #8f8f8f;
         }
 
         .ss-values {
