@@ -9,6 +9,10 @@
         transform: translateY(-50%);
         left: 8px;
         fill: #5c5c5c;
+
+        @include mobile {
+            left: 16px;
+        }
     }
 
     &__input {
@@ -22,6 +26,12 @@
         font-weight: 400;
         line-height: 20px;
         transition: all 0.2s;
+
+        @include mobile {
+            padding: 9px 9px 9px 47px;
+            font-size: 16px;
+            line-height: 24px;
+        }
 
         &::placeholder {
             color: #8f8f8f;
@@ -59,6 +69,11 @@
         border: none;
         background-color: transparent;
         cursor: pointer;
+
+        @include mobile {
+            bottom: 10px;
+            right: 16px;
+        }
 
         &:hover {
             svg {

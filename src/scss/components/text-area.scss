@@ -11,6 +11,8 @@
 
         @include mobile {
             margin-right: 60px;
+            font-size: 14px;
+            line-height: 20px;
         }
     }
 
@@ -27,6 +29,12 @@
         font-weight: 400;
         line-height: 20px;
         transition: all 0.2s;
+
+        @include mobile {
+            padding: 12px 16px;
+            font-size: 16px;
+            line-height: 24px;
+        }
 
         &::placeholder {
             color: #8f8f8f;

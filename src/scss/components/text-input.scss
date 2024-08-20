@@ -8,6 +8,12 @@
         color: #5c5c5c;
         font-size: 12px;
         line-height: 1.33;
+
+        @include mobile {
+            margin-bottom: 8px;
+            font-size: 14px;
+            line-height: 20px;
+        }
     }
 
     &__input {
@@ -21,6 +27,12 @@
         font-weight: 400;
         line-height: 20px;
         transition: all 0.2s;
+
+        @include mobile {
+            padding: 9px 38px 9px 15px;
+            font-size: 16px;
+            line-height: 24px;
+        }
 
         &::placeholder {
             color: #8f8f8f;
@@ -58,6 +70,11 @@
         border: none;
         background-color: transparent;
         cursor: pointer;
+
+        @include mobile {
+            right: 12px;
+            bottom: 10px;
+        }
 
         &:hover {
             svg {

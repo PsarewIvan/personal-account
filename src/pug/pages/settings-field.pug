@@ -37,7 +37,7 @@ block content
                         +text-input('', 'Необходимо указать адрес', '', 'Проспект 60-ти летия Октября, д. 358, корп. 13', 'hidden')
                 .settings-controls.js-settings-controls
                     +button('Отмена', 's', 'secondary', 'js-settings-edit-reset')
-                    +button('Сохранить', 's', 'primary', 'js-settings-edit-apply')
+                    +button('Сохранить', 's', 'primary', 'settings-controls__apply-button js-settings-edit-apply')
                 +edit-button('Редактировать', 'settings-field__edit js-settings-field-edit')
             .settings-mail-address
                 +h3('Адреса электронной почты', 'settings-h3_thin')
@@ -54,7 +54,7 @@ block content
                         +text-input('', 'Необходимо указать адрес', '', 'rd@romashka.ru', 'hidden')
                 .settings-controls.js-settings-controls
                     +button('Отмена', 's', 'secondary', 'js-settings-edit-reset')
-                    +button('Сохранить', 's', 'primary', 'js-settings-edit-apply')
+                    +button('Сохранить', 's', 'primary', 'settings-controls__apply-button js-settings-edit-apply')
                 +edit-button('Редактировать', 'settings-field__edit js-settings-field-edit')
             +h3('Согласие на обработку и хранение персональных данных')
             .settings-consent
@@ -63,18 +63,19 @@ block content
                 .settings-consent__text Абонент даёт согласие операторам и интеграторам для обработки данных только в рамках деятельности ООО «Ромашка на лугу весенним майским утром», связанной с обслуживанием данного абонента.
                 .settings-company-fields.js-settings-content
                     .settings-field.settings-field_thin.settings-field_add
-                        .settings-field__label Уточняющие положения к соглашению на обработку и хранение персональных данных
+                        .settings-field__label.js-settings-content-label Уточняющие положения к соглашению на обработку и хранение персональных данных
                         .settings-field__content.js-settings-content-text ООО Ромашка на лугу весенним майским утром также оставляет за собой право использовать персональные данные для следующих целей: улучшение качества обслуживания клиентов; предоставление персонализированных предложений и акций. ООО Ромашка на лугу весенним майским утром гарантирует, что все предоставленные персональные данные будут обработаны в соответствии с действующим законодательством о защите персональных данных и не будут переданы третьим лицам без предварительного согласия абонента, за исключением случаев, предусмотренных законом.
-                        +text-area('', '', 'ООО Ромашка на лугу весенним майским утром также оставляет за собой право использовать персональные данные для следующих целей: улучшение качества обслуживания клиентов; предоставление персонализированных предложений и акций. ООО Ромашка на лугу весенним майским утром гарантирует, что все предоставленные персональные данные будут обработаны в соответствии с действующим законодательством о защите персональных данных и не будут переданы третьим лицам без предварительного согласия абонента, за исключением случаев, предусмотренных законом.', 'hidden')
+                        +text-area('Уточняющие положения к соглашению на обработку и хранение персональных данных', '', 'ООО Ромашка на лугу весенним майским утром также оставляет за собой право использовать персональные данные для следующих целей: улучшение качества обслуживания клиентов; предоставление персонализированных предложений и акций. ООО Ромашка на лугу весенним майским утром гарантирует, что все предоставленные персональные данные будут обработаны в соответствии с действующим законодательством о защите персональных данных и не будут переданы третьим лицам без предварительного согласия абонента, за исключением случаев, предусмотренных законом.', 'hidden')
                     .settings-controls.js-settings-controls
                         +button('Отмена', 's', 'secondary', 'js-settings-edit-reset')
-                        +button('Сохранить', 's', 'primary', 'js-settings-edit-apply')
+                        +button('Сохранить', 's', 'primary', 'settings-controls__apply-button js-settings-edit-apply')
                     +edit-button('Редактировать', 'settings-field__edit js-settings-field-edit')
                     .settings-qr
                         img.settings-qr__img(src='img/qr.jpg' alt='')
                         .settings-qr__controls
-                            button.settings-qr__button(type="button")
+                            button.settings-qr__button.tooltip-trigger.js-tooltip-trigger(type="button")
                                 +icon-print('settings-qr__icon')
+                                +tooltip('Распечатать QR-код')
                             button.settings-qr__button.tooltip-trigger.js-tooltip-trigger(type="button")
                                 +icon-download('settings-qr__icon')
                                 +tooltip('Скачать QR-код')
@@ -85,5 +86,5 @@ block content
                     +text-area('', '', 'Даёт согласие на обработку персональных данных ООО Ромашка на лугу весенним майским утром, находящегося по адресу: г. Усть-Каменогорск, Проспект 60-ти летия Октября, д. 358, корп. 13. А также ООО «Салон онлайн» (SONLINE), а также интеграторам и операторам связи, через которые ООО Ромашка на лугу весенним майским утром будет отправлять ему сообщения и письма.', 'hidden')
                 .settings-controls.js-settings-controls
                     +button('Отмена', 's', 'secondary', 'js-settings-edit-reset')
-                    +button('Сохранить', 's', 'primary', 'js-settings-edit-apply')
+                    +button('Сохранить', 's', 'primary', 'settings-controls__apply-button js-settings-edit-apply')
                 +edit-button('Редактировать', 'settings-field__edit js-settings-field-edit')

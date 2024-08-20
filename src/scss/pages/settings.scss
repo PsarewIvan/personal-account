@@ -40,6 +40,11 @@
         color: #5c5c5c;
         font-size: 12px;
         line-height: 1.33;
+
+        @include mobile {
+            font-size: 14px;
+            line-height: 20px;
+        }
     }
 
     &__content {
@@ -138,6 +143,12 @@
 
     &.active {
         display: flex;
+    }
+
+    &__apply-button {
+        @include mobile {
+            width: 100%;
+        }
     }
 }
 

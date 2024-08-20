@@ -13,15 +13,17 @@
     gap: 16px;
 
     @include mobile {
-        max-width: 496px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        flex-direction: column;
     }
 }
 
 .index-params {
     display: flex;
     gap: 16px;
+
+    @include mobile {
+        flex-direction: column;
+    }
 }
 
 .index-datepicker {
@@ -29,6 +31,11 @@
 
     @include tablet {
         width: auto;
+    }
+
+    @include mobile {
+        width: 100%;
+        max-width: none !important;
     }
 }
 
@@ -43,6 +50,10 @@
         max-width: 240px;
         width: auto;
     }
+
+    @include mobile {
+        max-width: none;
+    }
 }
 
 .index-params-select {
@@ -50,6 +61,10 @@
 
     @include tablet {
         width: 240px;
+    }
+
+    @include mobile {
+        width: auto;
     }
 }
 

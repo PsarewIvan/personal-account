@@ -9,13 +9,26 @@
     background-color: #fff;
     transition: all 0.2s;
 
+    @include mobile {
+        height: 44px;
+    }
+
+    &_selected {
+        border-color: rgba(1, 144, 219, 0.48);
+        background-color: rgba(1, 144, 219, 0.08);
+
+        .datepicker-component__input {
+            color: #006fbc;
+        }
+    }
+
     &:hover {
         border-color: rgba(1, 144, 219, 0.48);
     }
 
     &__before {
         position: absolute;
-        left: 8px;
+        left: 12px;
         top: 50%;
         transform: translateY(-50%);
         width: 16px;
@@ -23,19 +36,31 @@
         font-size: 14px;
         line-height: 20px;
         pointer-events: none;
+
+        @include mobile {
+            left: 20px;
+        }
     }
 
     &__input {
         width: 100%;
         min-height: 36px;
         padding: 0;
-        padding-right: 40px;
-        padding-left: 40px;
+        padding-right: 32px;
+        padding-left: 36px;
         border: none;
         background-color: transparent;
         color: #1f1f1f;
         font-size: 14px;
         line-height: 20px;
+
+        @include mobile {
+            min-height: 44px;
+            font-size: 16px;
+            line-height: 24px;
+            padding-left: 44px;
+            padding-right: 44px;
+        }
 
         &:focus {
             outline: none;
@@ -52,6 +77,36 @@
         height: 24px;
         fill: #5c5c5c;
         pointer-events: none;
+
+        @include mobile {
+            right: 16px;
+        }
+    }
+
+    &__reset {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 8px;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+
+        @include mobile {
+            right: 16px;
+        }
+    }
+
+    &__reset-icon {
+        width: 16px;
+        height: 16px;
+        fill: #8f8f8f;
     }
 
     .datepicker {

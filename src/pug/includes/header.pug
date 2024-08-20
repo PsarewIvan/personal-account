@@ -6,9 +6,9 @@ block content
     include ../icons/icon-cross.pug
 
     header.header.js-header
-        button.header-burger.js-header-burger(type='button')
-            +icon-burger('header-burger__icon')
-            +icon-cross('header-burger__icon hidden')
+        button.header-burger.ok.js-header-burger(type='button')
+            +icon-burger('header-burger__icon burger')
+            +icon-cross('header-burger__icon cross')
         .title-wrapper
             h1.title Картотека
             .actions.js-header-actions
@@ -42,7 +42,7 @@ block content
                     li.nav-element
                         a.nav-link(href='/howitwork.html' class=page === 'howitwork' ? 'nav-link_active' : '') Как это работает?
         .user.js-nav-user
-            .user__content
+            .user__content.js-user-content
                 .user__name Ромашка на лугу весенним майским утром
                 .user__email konstantinopolsky_konstantin@email.ru
             button.user__button-exit.tooltip-trigger.js-tooltip-trigger

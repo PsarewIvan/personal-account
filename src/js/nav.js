@@ -39,6 +39,7 @@
                 user?.classList.add('hidden');
                 mobileActions?.classList.remove('hidden');
             }
+
             hasMobileInit = true;
         } else if (hasMobileInit) {
             user?.classList.remove('hidden');
@@ -51,10 +52,14 @@
         if (hasMenuOpen) {
             hasMenuOpen = false;
             nav?.classList.add('hidden');
+            user?.classList.add('hidden');
+            burger?.classList.remove('open');
             document.body.classList.remove('body-lock');
         } else {
             hasMenuOpen = true;
             nav?.classList.remove('hidden');
+            user?.classList.remove('hidden');
+            burger?.classList.add('open');
             document.body.classList.add('body-lock');
         }
     }

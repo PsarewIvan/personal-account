@@ -34,6 +34,20 @@
     display: none;
     visibility: hidden;
 
+    &.open {
+        .header-burger__icon.burger {
+            display: none;
+        }
+
+        .header-burger__icon.cross {
+            display: block;
+        }
+    }
+
+    .header-burger__icon.cross {
+        display: none;
+    }
+
     @include tablet {
         visibility: visible;
         flex-shrink: 0;
@@ -50,9 +64,41 @@
         cursor: pointer;
 
         &__icon {
-            width: 16px;
-            height: 16px;
+            width: 24px;
+            height: 24px;
             fill: #5c5c5c;
+        }
+    }
+
+    @include mobile {
+        position: relative;
+
+        &:not(.open):after {
+            content: '';
+            position: absolute;
+            right: 4px;
+            top: 4px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        &.ok {
+            &::after {
+                background-color: #2b9927;
+            }
+        }
+
+        &.warning {
+            &::after {
+                background-color: #e0a800;
+            }
+        }
+
+        &.error {
+            &::after {
+                background-color: #ff3b38;
+            }
         }
     }
 }
@@ -125,6 +171,7 @@
         flex-direction: column;
         gap: 4px;
         margin-top: 4px;
+        margin-bottom: 16px;
     }
 }
 
@@ -159,7 +206,7 @@
 
     @include mobile {
         top: 57px;
-        padding: 16px;
+        padding: 16px 16px 84px;
     }
 }
 
@@ -205,6 +252,17 @@
         margin-top: 0;
     }
 
+    @include mobile {
+        position: fixed;
+        z-index: 900;
+        bottom: 24px;
+        left: 0;
+        right: 0;
+        display: grid;
+        grid-template-columns: 1fr 40px;
+        background-color: #fff;
+    }
+
     &__content {
         display: flex;
         flex-direction: column;
@@ -215,6 +273,11 @@
 
         @include tablet {
             width: 144px;
+        }
+
+        @include mobile {
+            padding-left: 8px;
+            width: auto;
         }
     }
 

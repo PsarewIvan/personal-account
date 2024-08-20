@@ -1,15 +1,48 @@
 (() => {
-    const elements = document.querySelectorAll('.js-datepicker');
+    const elementsWrapper = document.querySelectorAll('.js-datepicker-wrapper');
 
-    elements?.forEach((element) => {
+    elementsWrapper?.forEach((elementWrapper) => {
+        const input = elementWrapper.querySelector('.js-datepicker');
+
         if (Datepicker) {
-            const datepicker = new Datepicker(element, {
+            const datepicker = new Datepicker(input, {
                 language: 'ru',
                 autohide: true,
                 maxView: 2,
                 todayHighlight: true,
                 prevArrow: getChevronIcon(),
                 nextArrow: getChevronIcon(),
+            });
+
+            const calendar = elementWrapper.querySelector(
+                '.js-datepicker-calendar-icon'
+            );
+            const reset = elementWrapper.querySelector('.js-datepicker-reset');
+
+            input?.addEventListener('changeDate', (event) => {
+                console.log(event.target.value);
+                if (!event.target.value || event.target.value === '') {
+                    calendar.classList.remove('hidden');
+                    reset.classList.add('hidden');
+                    elementWrapper.classList.remove(
+                        'datepicker-component_selected'
+                    );
+                } else {
+                    calendar.classList.add('hidden');
+                    reset.classList.remove('hidden');
+                    elementWrapper.classList.add(
+                        'datepicker-component_selected'
+                    );
+                }
+            });
+
+            reset?.addEventListener('click', () => {
+                datepicker?.setDate({ clear: true });
+                calendar.classList.remove('hidden');
+                reset.classList.add('hidden');
+                elementWrapper.classList.remove(
+                    'datepicker-component_selected'
+                );
             });
         }
     });
@@ -63,6 +96,7 @@
                 user?.classList.add('hidden');
                 mobileActions?.classList.remove('hidden');
             }
+
             hasMobileInit = true;
         } else if (hasMobileInit) {
             user?.classList.remove('hidden');
@@ -75,10 +109,14 @@
         if (hasMenuOpen) {
             hasMenuOpen = false;
             nav?.classList.add('hidden');
+            user?.classList.add('hidden');
+            burger?.classList.remove('open');
             document.body.classList.remove('body-lock');
         } else {
             hasMenuOpen = true;
             nav?.classList.remove('hidden');
+            user?.classList.remove('hidden');
+            burger?.classList.add('open');
             document.body.classList.add('body-lock');
         }
     }
@@ -198,8 +236,6 @@
         '.js-select-component-wrapper'
     );
 
-    console.log(selectsWrapper);
-
     selectsWrapper.forEach((selectWrapper) => {
         const select = selectWrapper.querySelector('.js-select-component');
         const placeholder = select?.dataset.placeholder;
@@ -269,6 +305,7 @@
         const resetButton = controls?.querySelector('.js-settings-edit-reset');
 
         const texts = content.querySelectorAll('.js-settings-content-text');
+        const label = content.querySelector('.js-settings-content-label');
         const inputs = content.querySelectorAll('.js-text-input-node');
         const textAreas = content.querySelectorAll('.js-text-area-node');
 
@@ -276,6 +313,8 @@
         resetButton?.addEventListener('click', resetEditMode);
 
         function showEditMode() {
+            label?.classList.add('hidden');
+
             texts?.forEach((textNode) => {
                 textNode.classList.add('hidden');
             });
@@ -291,6 +330,8 @@
         }
 
         function resetEditMode() {
+            label?.classList.remove('hidden');
+
             texts?.forEach((text) => {
                 text.classList.remove('hidden');
             });
@@ -407,6 +448,33 @@
 
         if (tooltipTopPointY < 0) {
             tooltip.classList.add(TOOLTIP_BOTTOM_CLASS);
+        }
+    }
+})();
+
+(() => {
+    const BUTTON_WIDTH = 40;
+    const USER_MARGIN = 16;
+    let hasMobileInit = false;
+
+    const userContent = document.querySelector('.js-user-content');
+
+    window.addEventListener('resize', initMobile);
+    initMobile();
+
+    function initMobile() {
+        if (window.innerWidth < 768) {
+            const currentWidth =
+                window.innerWidth - BUTTON_WIDTH - USER_MARGIN * 2;
+
+            if (userContent) {
+                userContent.style.width = `${currentWidth}px`;
+            }
+
+            hasMobileInit = true;
+        } else if (hasMobileInit) {
+            userContent.style.width = '';
+            hasMobileInit = false;
         }
     }
 })();

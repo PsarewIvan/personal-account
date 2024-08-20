@@ -10,6 +10,7 @@
         const resetButton = controls?.querySelector('.js-settings-edit-reset');
 
         const texts = content.querySelectorAll('.js-settings-content-text');
+        const label = content.querySelector('.js-settings-content-label');
         const inputs = content.querySelectorAll('.js-text-input-node');
         const textAreas = content.querySelectorAll('.js-text-area-node');
 
@@ -17,6 +18,8 @@
         resetButton?.addEventListener('click', resetEditMode);
 
         function showEditMode() {
+            label?.classList.add('hidden');
+
             texts?.forEach((textNode) => {
                 textNode.classList.add('hidden');
             });
@@ -32,6 +35,8 @@
         }
 
         function resetEditMode() {
+            label?.classList.remove('hidden');
+
             texts?.forEach((text) => {
                 text.classList.remove('hidden');
             });

@@ -4,21 +4,12 @@
     padding: 8px 0;
 
     @include mobile {
-        // flex-direction: column;
-        flex-wrap: wrap;
-    }
-}
-
-.access-phone {
-    @include mobile {
-        width: 100%;
+        flex-direction: column;
     }
 }
 
 .access-params {
     @include mobile {
-        width: calc(50% - 8px);
-
         .select-component-wrapper .select-component {
             max-width: none;
         }
@@ -27,8 +18,6 @@
 
 .access-submit {
     @include mobile {
-        width: calc(50% - 8px);
-
         button {
             width: 100%;
             justify-content: center;

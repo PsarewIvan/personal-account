@@ -13,6 +13,12 @@
         background: #fff;
         transition: border-color 0.2s;
 
+        @include mobile {
+            max-width: none;
+            height: 44px;
+            padding: 0 16px;
+        }
+
         &:hover {
             border-color: rgba(1, 144, 219, 0.48);
         }
@@ -51,6 +57,11 @@
             border: none;
             cursor: pointer;
             background-color: transparent;
+
+            @include mobile {
+                height: 44px;
+                right: 16px;
+            }
         }
 
         &__reset-icon {
@@ -63,6 +74,18 @@
             color: #1f1f1f;
             font-size: 14px;
             line-height: 20px;
+
+            .ss-placeholder,
+            .ss-single {
+                padding: 0 4px;
+                font-size: 14px;
+                line-height: 20px;
+
+                @include mobile {
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+            }
         }
     }
 
@@ -76,7 +99,6 @@
 
 .ss-content {
     margin-top: 4px !important;
-    padding: 8px;
     border-radius: 8px;
     border-bottom-right-radius: 8px !important;
     border-bottom-left-radius: 8px !important;
@@ -84,12 +106,20 @@
     box-shadow: 0px 16px 24px 0px rgba(0, 0, 0, 0.06),
         0px 2px 6px 0px rgba(0, 0, 0, 0.04), 0px 0px 1px 0px rgba(0, 0, 0, 0.04);
 
-    .ss-option {
+    .ss-list {
+        padding: 8px;
+    }
+
+    .ss-option:not(.ss-hide) {
+        display: block !important;
         border-radius: 2px;
         padding: 14px 8px !important;
         color: #1f1f1f !important;
         font-size: 14px;
         line-height: 20px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
 
         &:hover {
             background-color: rgba(1, 144, 219, 0.08) !important;

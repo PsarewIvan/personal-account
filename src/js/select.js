@@ -3,8 +3,6 @@
         '.js-select-component-wrapper'
     );
 
-    console.log(selectsWrapper);
-
     selectsWrapper.forEach((selectWrapper) => {
         const select = selectWrapper.querySelector('.js-select-component');
         const placeholder = select?.dataset.placeholder;
