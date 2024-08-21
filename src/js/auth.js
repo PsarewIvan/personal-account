@@ -1,13 +1,15 @@
 (() => {
-    const openPopupButtons = document.querySelectorAll('.js-qr-button-open');
-    const popup = document.querySelector('.js-qr-popup');
-    const closePopupButton = popup?.querySelector('.js-close-qr-popup');
+    const authAlerts = document.querySelectorAll('.js-index-auth-alert');
 
-    openPopupButtons.forEach((openPopupButton) => {
-        if (closePopupButton && popup) {
-            openPopupButton.addEventListener('click', openPopup);
-            closePopupButton.addEventListener('click', closePopup);
-        }
+    const popup = document.querySelector('.js-popup-auth');
+    const closePopupButton = popup?.querySelector('.js-close-popup-auth');
+
+    authAlerts.forEach((alert) => {
+        const authButtonOpen = alert.querySelector('.js-alert-button');
+
+        console.log(authButtonOpen);
+        authButtonOpen?.addEventListener('click', openPopup);
+        closePopupButton?.addEventListener('click', closePopup);
     });
 
     function openPopup() {

@@ -1,0 +1,27 @@
+include ../icons/icon-cross.pug
+include ../icons/icon-images.pug
+include ../icons/icon-video.pug
+include ../components/button.pug
+
+mixin popup-auth()
+    .popup-auth.hidden.js-popup-auth
+        .popup-auth__box
+            .popup-auth__header
+                button.popup-auth__button.js-close-popup-auth(type="button")
+                    +icon-cross('popup-auth__icon')
+            .popup-auth__content
+                .popup-auth__content-title Авторизация телефона
+                .popup-auth__content-text-wrapper
+                    .popup-auth__text-block
+                        .popup-auth__text Для того чтобы отправлялись сообщения из вашей CRM клиентам в WhatsApp, нужно чтобы ваш рабочий телефон был авторизован в Wazapa.
+                        ol.popup-auth__list
+                            li.popup-auth__list-element Откройте WhatsApp на телефоне.
+                            li.popup-auth__list-element Нажмите Меню или Настройки.
+                            li.popup-auth__list-element Нажмите на пункт Связанные устройства.
+                            li.popup-auth__list-element Нажмите на кнопку Привязка устройства.
+                            li.popup-auth__list-element Наведите камеру на экран, чтобы считать код ниже.
+                    .popup-auth__image-block
+                        img.popup-auth__img(src="img/auth-qr.jpg")
+                        .popup-auth__image-button
+                            +button('Инструкция с картинками', 's', 'secondary', '', 'image')
+                            +button('Видеоинструкция', 's', 'secondary', '', 'video')

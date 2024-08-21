@@ -1,4 +1,11 @@
-mixin button(text, size='s', theme='primary', className='')
+include ../icons/icon-images.pug
+include ../icons/icon-video.pug
+
+mixin button(text, size='s', theme='primary', className='', icon)
     - var classes = size + ' ' + theme + ' ' + className;
     button.button(type="button" class=classes)
+        if icon === 'image'
+            +icon-images('button__icon')
+        if icon === 'video'
+            +icon-video('button__icon')
         = text

@@ -8,15 +8,16 @@ block content
     include ../components/alert-button.pug
     include ../components/search-input.pug
     include ../components/popup-qr.pug
+    include ../components/popup-auth.pug
     include ../icons/icon-qr.pug
 
     .main-content(id='js-main-content')
-        +alert-button('Телефон не авторизован', ['Внимание, сообщения не отправляются. Необходимо привязать рабочий телефон.'], 'Авторизовать')
+        +alert-button('Телефон не авторизован', ['Внимание, сообщения не отправляются. Необходимо привязать рабочий телефон.'], 'Авторизовать', 'js-index-auth-alert')
         form.index-form
             .index-phone
                 +search-input('Телефон клиента', '', 'index-search-input_not-auth')
             .index-qr_content
-                button.index-qr_content__link.js-qr-button(type='button')
+                button.index-qr_content__link.js-qr-button-open(type='button')
                     +icon-qr('index-qr_content__icon')
                     span.index-qr_content__text QR-код для клиентов
         .table.index-table-not-auth
@@ -48,4 +49,5 @@ block content
                 .table-cell
                     .badge.badge_red Отзыв
     +popup-qr()
+    +popup-auth()
 
