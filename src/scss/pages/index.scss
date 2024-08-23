@@ -221,6 +221,23 @@
         justify-content: center;
     }
 
+    &_header {
+        margin-top: 8px;
+        margin-bottom: 16px;
+
+        @include tablet {
+            margin-top: 0;
+        }
+
+        @include mobile {
+            justify-content: flex-start;
+        }
+
+        .index-qr_content__link {
+            padding: 0 8px;
+        }
+    }
+
     &__link {
         display: flex;
         flex-direction: row;

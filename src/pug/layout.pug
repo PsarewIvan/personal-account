@@ -12,7 +12,9 @@ html
         link(rel="stylesheet" href="libs/datepicker.css")
         link(rel="stylesheet" href="libs/slimselect.css")
     body
+        include components/popup-qr.pug
         block content
+        +popup-qr()
     script(src="libs/datepicker.js")
     script(src="libs/slimselect.js")
     script(src="js/index.js")

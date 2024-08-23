@@ -4,6 +4,7 @@ block content
     include ../icons/icon-exit.pug
     include ../icons/icon-burger.pug
     include ../icons/icon-cross.pug
+    include ../icons/icon-qr.pug
 
     header.header.js-header
         button.header-burger.ok.js-header-burger(type='button')
@@ -18,12 +19,17 @@ block content
                 +status-text('Получено 997 согласий', 'header-status-main')
             .actions-mobile.js-header-actions-mobile.hidden
                 +status-text('Получено 997 согласий')
-        if page !== 'index-not-auth'
-            nav.nav.js-nav
+        nav.nav.js-nav
+            if page !== 'index-not-auth'
                 .action-nav-mobile
                     +status-ok('Лицензия до 31.12.2025')
                     +status-warning('Лицензия до 31.12.2025')
                     +status-error('Срок лицензии истек 31.12.2025')
+            .index-qr_content.index-qr_content_header
+                button.index-qr_content__link.js-qr-button-open(type='button')
+                    +icon-qr('index-qr_content__icon')
+                    span.index-qr_content__text QR-код для клиентов
+            if page !== 'index-not-auth'
                 ul.nav_list
                     li.nav-element
                         a.nav-link(href='/' class=page === 'index' ? 'nav-link_active' : '') Лента событий
