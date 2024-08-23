@@ -33,6 +33,11 @@ const paths = {
         watch: 'src/js/**',
         dest: 'docs/js/',
     },
+    libs: {
+        src: 'src/libs/**',
+        watch: 'src/libs/**',
+        dest: 'docs/libs/',
+    },
     images: {
         src: 'src/assets/images/**',
         watch: 'src/assets/images/**',
@@ -74,6 +79,13 @@ function styles() {
 }
 
 // Объединение и минификация JS
+function libs() {
+    return gulp
+        .src(paths.libs.src)
+        .on('error', console.log)
+        .pipe(gulp.dest(paths.libs.dest));
+}
+
 function scripts() {
     return (
         gulp
@@ -129,7 +141,15 @@ function watch() {
     gulp.watch(paths.images.watch, images);
 }
 
-export const start = gulp.series(html, styles, scripts, images, fonts, watch);
-export const build = gulp.series(html, styles, scripts, images, fonts);
+export const start = gulp.series(
+    libs,
+    html,
+    styles,
+    scripts,
+    images,
+    fonts,
+    watch
+);
+export const build = gulp.series(libs, html, styles, scripts, images, fonts);
 
 export default build;
