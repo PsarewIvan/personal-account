@@ -177,6 +177,9 @@
 
 .nav {
     overflow: auto;
+    width: calc(100% + 32px);
+    margin-left: -16px;
+    padding: 0 16px;
     margin-bottom: 16px;
 
     &::-webkit-scrollbar {
@@ -199,9 +202,11 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: #fff;
+        width: auto;
+        margin-left: 0;
         margin-bottom: 0;
         padding: 16px 32px;
+        background-color: #fff;
     }
 
     @include mobile {
