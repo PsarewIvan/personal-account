@@ -5,6 +5,8 @@ block content
     include ../icons/icon-burger.pug
     include ../icons/icon-cross.pug
     include ../icons/icon-qr.pug
+    include ../icons/icon-logo.pug
+    include ../icons/icon-logo-text.pug
 
     header.header.js-header
         button.header-burger.ok.js-header-burger(type='button')
@@ -12,6 +14,9 @@ block content
             +icon-cross('header-burger__icon cross')
         .title-wrapper
             h1.title Картотека
+            .title-logo
+                +icon-logo('title-logo__icon')
+                +icon-logo-text('title-logo__text-icon')
             .actions.js-header-actions
                 +status-ok('Лицензия до 31.12.2025')
                 +status-warning('Лицензия до 31.12.2025')

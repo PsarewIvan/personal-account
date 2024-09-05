@@ -122,6 +122,7 @@
 }
 
 .title {
+    display: none;
     margin: 0;
     color: #1f1f1f;
     font-size: 24px;
@@ -129,6 +130,28 @@
     line-height: 32px;
 
     @include tablet {
+        display: block;
+    }
+}
+
+.title-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 4px;
+
+    @include tablet {
+        display: none;
+    }
+
+    &__icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    &__text-icon {
+        width: 108px;
+        height: 18px;
     }
 }
 
