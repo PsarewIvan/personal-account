@@ -7,7 +7,6 @@
     authAlerts.forEach((alert) => {
         const authButtonOpen = alert.querySelector('.js-alert-button');
 
-        console.log(authButtonOpen);
         authButtonOpen?.addEventListener('click', openPopup);
         closePopupButton?.addEventListener('click', closePopup);
     });
