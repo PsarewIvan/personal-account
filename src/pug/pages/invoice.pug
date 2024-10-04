@@ -1,0 +1,44 @@
+extends ../layout.pug
+
+block variables
+  - var page = 'invoice'
+
+block content
+  include ../includes/header.pug
+  include ../components/h2.pug
+  include ../components/h3.pug
+  include ../components/text-input.pug
+  include ../components/button.pug
+
+  .main-content(id='js-main-content')
+    +h2('Счет на оплату лицензии')
+    form.invoice-form
+      +h3('Укажите ваши данные')
+      +text-input('ИНН юридического лица', '', '0000000000', '', 'invoice-form__inn')
+      +text-input('Промокод', '', '', '', 'invoice-form__promo-code')
+      .invoice-apply-block
+        +button('Отмена', 's', 'secondary', 'invoice-apply-block__button')
+        +button('Получить счет на оплату', 's', 'primary', 'invoice-apply-block__button')
+
+    form.invoice-form
+      +h3('Укажите ваши данные')
+      +text-input('ИНН юридического лица', '', '0000000000', '7708654321', 'invoice-form__inn active', 'ИП Казарян Г.В.')
+      +text-input('Промокод', '', '', '', 'invoice-form__promo-code')
+      .invoice-apply-block
+        +button('Отмена', 's', 'secondary', 'invoice-apply-block__button')
+        +button('Получить счет на оплату', 's', 'primary', 'invoice-apply-block__button')
+
+    form.invoice-form
+      +h3('Укажите ваши данные')
+      +text-input('ИНН юридического лица', '', '0000000000', '7708654321', 'invoice-form__inn', '', 'ИНН должен содержать 10 знаков')
+      +text-input('Промокод', '', '', 'PRYMS', 'invoice-form__promo-code', '', 'Неверный код')
+      .invoice-apply-block
+        +button('Отмена', 's', 'secondary', 'invoice-apply-block__button')
+        +button('Получить счет на оплату', 's', 'primary', 'invoice-apply-block__button')
+
+    +h3('Счет успешно сформирован')
+    button.invoice-button-link(type='button') 
+      | Скачать счет №
+      span 9729347580
+      |  от 
+      span 04.09.2024

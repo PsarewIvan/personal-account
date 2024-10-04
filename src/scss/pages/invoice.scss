@@ -1,0 +1,54 @@
+.invoice-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &__inn {
+        max-width: 240px;
+    }
+
+    &__promo-code {
+        max-width: 128px;
+    }
+}
+
+.invoice-apply-block {
+    display: flex;
+    gap: 8px;
+    padding-top: 16px;
+
+    @include mobile {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+    }
+}
+
+.invoice-apply-block .invoice-apply-block__button {
+    @include mobile {
+        max-width: 250px;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+}
+
+.invoice-button-link {
+    width: fit-content;
+    padding: 10px 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: #006fbc;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    transition: all 0.2s;
+
+    &:hover {
+        color: #00539d;
+    }
+
+    @include mobile {
+        padding: 0;
+        text-align: left;
+    }
+}

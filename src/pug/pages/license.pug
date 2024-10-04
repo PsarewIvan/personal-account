@@ -8,6 +8,7 @@ block content
     include ../components/h2.pug
     include ../components/status.pug
     include ../components/button.pug
+    include ../components/button-link.pug
     include ../icons/icon-ok.pug
 
     .main-content(id='js-main-content')
@@ -42,7 +43,7 @@ block content
                 .license-card__price-block
                   .license-card__price 12 000 ₽
                   .license-card__price-text за 12 месяцев
-                +button('Продлить', 's', 'primary', 'license-card__button')
+                +button-link('Купить', 's', 'primary', 'license-card__button', './invoice.html')
             .license-card.accept
               .license-card__block
                 .license-card__title Расширенная
@@ -57,7 +58,7 @@ block content
                 .license-card__price-block
                   .license-card__price 18 000 ₽
                   .license-card__price-text за 12 месяцев
-                +button('Продлить', 's', 'primary', 'license-card__button')
+                +button-link('Купить', 's', 'primary', 'license-card__button', './invoice.html')
             .license-card.success
               .license-card__block
                 .license-card__title Расширенная
@@ -74,7 +75,7 @@ block content
                 .license-card__price-block
                   .license-card__price 18 000 ₽
                   .license-card__price-text за 12 месяцев
-                +button('Продлить', 's', 'primary', 'license-card__button')
+                +button-link('Купить', 's', 'primary', 'license-card__button', './invoice.html')
             .license-card.danger
               .license-card__block
                 .license-card__title Расширенная
@@ -91,4 +92,4 @@ block content
                 .license-card__price-block
                   .license-card__price 18 000 ₽
                   .license-card__price-text за 12 месяцев
-                +button('Продлить', 's', 'primary', 'license-card__button')
+                +button-link('Купить', 's', 'primary', 'license-card__button', './invoice.html')

@@ -1,0 +1,7 @@
+include ../icons/icon-images.pug
+include ../icons/icon-video.pug
+
+mixin button-link(text, size='s', theme='primary', className='', href)
+    - var classes = size + ' ' + theme + ' ' + className;
+    a.button(type="button" href=href class=classes)
+        = text
